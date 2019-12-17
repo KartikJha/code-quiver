@@ -13,7 +13,7 @@ if (!xmlString) {
 }
 
 
-if (false) {
+if (jsToXml) {
   const xmlString = convert.js2xml(a, {
     compact: true,
     ignoreComment: true,

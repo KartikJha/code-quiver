@@ -40,3 +40,40 @@ export const compareElementsInArray = (arr, listOfPairsAndCondition) => {
   });
   return result;
 };
+
+/**
+ * returns the number of chars that are different
+ * in two strings
+ * @param {string} s1
+ * @param {string} s2
+ */
+export const differentCharInEqualLenStrings = (s1, s2) => {
+  let count = 0;
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] !== s2[i]) {
+      count++;
+    }
+  }
+  return count;
+};
+
+/**
+ * return
+ * @param {string} s1 | smaller string
+ * @param {string} s2
+ */
+export const overlapStringsAndGetDiff = (s1, s2) => {
+  let min = 0;
+  for (let i = 0; i < s2.length - s1.length; i++) {
+    let count = 0;
+    for (let j = i; j < s1.length; j++) {
+      if (s1[j] !== s2[j]) {
+        count++;
+      }
+    }
+    if (count <= min) {
+      min = count;
+    }
+  }
+  return min;
+};
