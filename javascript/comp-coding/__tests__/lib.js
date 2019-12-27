@@ -1,5 +1,5 @@
 /* global expect, describe, it */
-import { arrayHasOneDropPoint, compareElementsInArray } from '../lib';
+import { arrayHasOneDropPoint, compareElementsInArray, overlapStringsAndGetDiff } from '../lib';
 
 describe('arrayHasOneDropPoint test', () => {
   it('returns null for array of size less than 1', () => {
@@ -27,4 +27,8 @@ describe('compareElementsInArray test', () => {
       false
     ]);
   });
+});
+
+describe('overlapStringsAndGetDiff test', () => {
+  expect(overlapStringsAndGetDiff('biting', 'sitting', 1)).toEqual(2);
 });

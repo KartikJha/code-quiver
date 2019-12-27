@@ -62,18 +62,35 @@ export const differentCharInEqualLenStrings = (s1, s2) => {
  * @param {string} s1 | smaller string
  * @param {string} s2
  */
-export const overlapStringsAndGetDiff = (s1, s2) => {
-  let min = 0;
-  for (let i = 0; i < s2.length - s1.length; i++) {
-    let count = 0;
-    for (let j = i; j < s1.length; j++) {
-      if (s1[j] !== s2[j]) {
-        count++;
+export const overlapStringsAndGetDiff = (s1, s2, lenDiff) => {
+  try {
+    let min = s2.length;
+    for (let i = 0; i < s2.length - s1.length; i++) {
+      let count = 0;
+      let offset = 0;
+      let _lD = lenDiff;
+      for (let j = i; j < s1.length + i; j++) {
+        const a = s1[j],
+          b = s2[j + offset];
+        console.log(a, b);
+        if (a !== b && _lD && a === s2[j + offset + 1]) {
+          console.log('length insert');
+          _lD--;
+          offset++;
+          count++;
+        } else if (a !== b) {
+          console.log('sub');
+          count++;
+        }
+      }
+      console.log('count ', count);
+      if (count <= min) {
+        min = count + _lD;
       }
     }
-    if (count <= min) {
-      min = count;
-    }
+    return min;
+  } catch (e) {
+    console.log(e.stack);
+    return 0;
   }
-  return min;
 };
