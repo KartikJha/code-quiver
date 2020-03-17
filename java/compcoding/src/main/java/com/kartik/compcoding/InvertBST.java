@@ -1,5 +1,7 @@
 package com.kartik.compcoding;
 
+import com.kartik.compcoding.treeUtils.TreeNode;
+
 public class InvertBST {
 //    public static TreeNode invertBST(TreeNode t, TreeNode iT) {
 //        if (iT == null) {
