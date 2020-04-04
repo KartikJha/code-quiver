@@ -1,4 +1,4 @@
-package com.kartik.compcoding.treeUtils;
+package com.kartik.compcoding.lib.treeUtils;
 
 
 public class TreeNode {

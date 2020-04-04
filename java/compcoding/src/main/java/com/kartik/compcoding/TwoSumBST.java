@@ -1,6 +1,6 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.treeUtils.TreeNode;
+import com.kartik.compcoding.lib.treeUtils.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

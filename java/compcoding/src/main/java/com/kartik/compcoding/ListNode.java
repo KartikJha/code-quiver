@@ -1,8 +1,8 @@
 package com.kartik.compcoding;
 
 
-public class ListNode {
-    int val;
+public class ListNode<T> {
+    T val;
     ListNode next;
-    ListNode(int x, ListNode n) { val = x; next = n; }
+    ListNode(T x, ListNode n) { val = x; next = n; }
 }

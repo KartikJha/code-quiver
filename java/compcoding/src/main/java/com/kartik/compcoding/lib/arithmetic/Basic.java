@@ -1,4 +1,4 @@
-//package com.kartik.compcoding.arithmetic;
+//package com.kartik.compcoding.lib.arithmetic;
 //
 //public class Basic {
 //    static Character getResult(Character a, Character b, Character operator) {

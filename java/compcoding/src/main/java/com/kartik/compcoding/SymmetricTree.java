@@ -1,6 +1,6 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.treeUtils.Tree;
+import com.kartik.compcoding.lib.treeUtils.Tree;
 
 import java.util.ArrayList;
 import java.util.List;

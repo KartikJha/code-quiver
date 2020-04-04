@@ -5,7 +5,7 @@ package com.kartik.compcoding;
  * couldn't answer on the spot
  */
 public class AddOneToLinkedList {
-    static ListNode addOne(ListNode listNode, Integer len) {
+    static ListNode addOne(ListNode<Integer> listNode, Integer len) {
         int sum, unit, carry;
         if (listNode.next == null) {
             sum = listNode.val + 1;
@@ -16,7 +16,7 @@ public class AddOneToLinkedList {
                 return listNode;
             }
         } else {
-            ListNode listNode1 = addOne(listNode.next, ++len);
+            ListNode<Integer> listNode1 = addOne(listNode.next, ++len);
             len--;
             sum = listNode.val + listNode1.val;
             unit = sum % 10;
