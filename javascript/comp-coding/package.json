@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest --passWithNoTests"
+    "test": "node max-distinct-substring.js"
   },
   "keywords": [],
   "author": "",
