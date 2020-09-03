@@ -68,10 +68,10 @@ public class TreeTest {
 //        Assert.assertEquals((Integer) 8 , Main.getBadDays(Arrays.asList()));
 //    }
 
-  @Test
-  public void basicTest1() {
-    Tree<Integer> testTree = new Tree<>(3, new Tree(2, ))
-    Assert.assertArrayEquals();
-  }
+//  @Test
+//  public void basicTest1() {
+//    Tree<Integer> testTree = new Tree<>(3, new Tree(2, ))
+//    Assert.assertArrayEquals();
+//  }
 
 }
