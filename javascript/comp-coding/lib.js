@@ -94,3 +94,21 @@ export const overlapStringsAndGetDiff = (s1, s2, lenDiff) => {
     return 0;
   }
 };
+
+export const mergeSortedList = (l1, l2) => {
+  var fl = [], i = 0, j = 0, k = 0;
+  while (i < l1.length && j < l2.length) {
+    if (l1[i] < l2[j]) {
+      fl[k++] = l1[i++];
+    } else {
+      fl[k++] = l2[j++];
+    }
+  }
+  if (i != l1.length) {
+    return fl.concat(l1.slice(i, l1.length));
+  }
+  if (j != l2.length) {
+    return fl.concat(l2.slice(j, l2.length));
+  }
+  return fl;
+}

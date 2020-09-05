@@ -5,6 +5,10 @@ package com.kartik.compcoding;
  * couldn't answer on the spot
  */
 public class AddOneToLinkedList {
+    public static void main() {
+        ListNode l = new ListNode<Integer>();
+        l.
+    }
     static ListNode addOne(ListNode<Integer> listNode, Integer len) {
         int sum, unit, carry;
         if (listNode.next == null) {

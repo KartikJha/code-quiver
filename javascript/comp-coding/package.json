@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "node max-distinct-substring.js"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -49,5 +49,6 @@
     "presets": [
       "@babel/preset-env"
     ]
-  }
+  },
+  "devDependencies": {}
 }
