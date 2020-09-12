@@ -5,7 +5,7 @@ const { execSync, exec } = require("child_process");
 if (!process.argv[2] || !process.argv[3]) {
   console.log(
     chalk.red(
-      "Usage: node bundle-repo ORGANIZATION REPO-STRING [BUNDLE-TARGET-DIR]\nExample: node bundle-repo 'twitter' 'main, side, boom'"
+      "Usage: node bundle-repo OWNER REPO-STRING [BUNDLE-TARGET-DIR]\nExample: node bundle-repo 'twitter' 'main, side, boom'"
     )
   );
   return;
