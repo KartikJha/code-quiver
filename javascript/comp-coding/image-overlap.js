@@ -9,7 +9,7 @@ var largestOverlap = function(A, B) {
         for (let j = -N; j < N; j++) {
             for (let r = 0; r <= Math.abs(i) % i; r++) {
                 for (let c = 0; c < N; c++) {
-                    const a = A[r][c], b = B[N - 1 -r][N - 1 - c];
+                    const a = A[r][c], b = B[N - 1 - r][N - 1 - c];
                     if (a == b) {
                         count++;
                     }
@@ -24,4 +24,4 @@ var largestOverlap = function(A, B) {
     return maxCount;
 };
 
-export default  largestOverlap;
+export default largestOverlap;
