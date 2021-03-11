@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,12 +12,7 @@ public class SubstringBeautySum {
         
         Queue<List<Integer>> minCountQ = 
         new PriorityQueue<>(
-            new Comparator<List<Integer>>() {
-              @Override
-              public int compare(List<Integer> o1, List<Integer> o2) {
-                return (o1.get(0) - o2.get(0));
-              }
-            });
+            (o1, o2) -> (o1.get(0) - o2.get(0)));
         
         
         int sum = 0;
@@ -26,7 +20,6 @@ public class SubstringBeautySum {
         int[] maxF = new int[2];
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
-                // System.out.println("CHAR " + s.substring(i, j + 1));
                 System.out.println(i + " " + j); 
                 System.out.println("BEFORE");
                 System.out.println(countForChar.toString());
