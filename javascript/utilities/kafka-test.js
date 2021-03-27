@@ -23,9 +23,9 @@ client.createTopics([{
       autoCommit: false
     }
   );
-  
+
   consumer.on('message', function (message) {
-      console.log(message);
+    console.log(message);
   });
 
   const producer = new kafka.Producer(client);
