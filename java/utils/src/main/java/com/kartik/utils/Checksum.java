@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Map;
 import java.util.UUID;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -27,9 +28,10 @@ public class Checksum {
   //  String body = br.readLine();
   //  String path = br.readLine();
   //  String key = br.readLine();
+   Map<String, String> env = System.getenv();
    String body = "";
    String path = "";
-   String key = "";
+   String key = env.get("CHECKSUM_SECRET");
    System.out.println(
         generateChecksumHeader(key, path , body.getBytes())
     );
