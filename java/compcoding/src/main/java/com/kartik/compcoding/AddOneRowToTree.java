@@ -3,7 +3,7 @@ package com.kartik.compcoding;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.kartik.compcoding.lib.treeUtils.TreeNode;
+import com.kartik.compcoding.lib.tree.TreeNode;
 
 class Node {
     public TreeNode node;

@@ -1,9 +1,9 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.lib.treeUtils.Tree;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.kartik.compcoding.lib.tree.Tree;
 
 public class SymmetricTree {
     static boolean isTreeSymmetric(Tree<Integer> t) {

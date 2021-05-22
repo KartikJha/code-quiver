@@ -3,7 +3,7 @@ package com.kartik.compcoding.lib.string;
 import java.util.HashMap;
 import java.util.Map;
 
-class StringAnalysis {
+public class StringAnalysis {
     static boolean areAnagrams(String a, String b) {
         if (a.length() != b.length()) {
             return false;

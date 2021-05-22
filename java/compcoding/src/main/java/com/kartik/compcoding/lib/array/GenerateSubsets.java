@@ -1,4 +1,4 @@
-package com.kartik.compcoding;
+package com.kartik.compcoding.lib.array;
 
 import java.util.*;
 

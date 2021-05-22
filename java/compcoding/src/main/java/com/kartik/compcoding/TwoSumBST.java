@@ -1,9 +1,9 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.lib.treeUtils.TreeNode;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import com.kartik.compcoding.lib.tree.TreeNode;
 
 class TwoSumBST {
     static boolean twoSumBSTs(TreeNode root1, TreeNode root2, int target) {

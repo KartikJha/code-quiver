@@ -1,6 +1,6 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.lib.treeUtils.TreeNode;
+import com.kartik.compcoding.lib.tree.TreeNode;
 
 public class DiameterBinaryTree {
     public static int diameter = -1;

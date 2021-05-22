@@ -1,7 +1,9 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.lib.treeUtils.TreeNode;
 import org.junit.Test;
+
+import com.kartik.compcoding.lib.tree.TreeNode;
+
 import org.junit.Assert;
 
 public class TwoSumBSTTest {
