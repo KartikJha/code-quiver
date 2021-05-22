@@ -1,6 +1,7 @@
 package com.kartik.compcoding;
 
-import com.kartik.compcoding.lib.treeUtils.TreeNode;
+import com.kartik.compcoding.lib.tree.TreeNode;
+
 import org.junit.Assert;
 import org.junit.Test;
 
