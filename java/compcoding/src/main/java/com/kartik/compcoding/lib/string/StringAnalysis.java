@@ -28,4 +28,23 @@ public class StringAnalysis {
         }
         return count == 0;
     }
+
+    private static String getSmallestHelper(int rV, int tL, StringBuilder cS) {
+        if (rV == 0 && tL == cS.capacity()) {
+            return cS.reverse().toString();
+        }
+        if (rV > 26) {
+            return getSmallestHelper(rV - 26, tL, cS.append('z'));
+        }
+        int offset = rV % 26;
+        return getSmallestHelper(rV - offset + 1, tL, cS.append((char) 97 + offset));
+    }
+
+    public static String getSmallest(int n, int k) {
+        return getSmallestHelper(n, k, new StringBuilder());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(StringAnalysis.getSmallest(27,  3));
+    }
 }
