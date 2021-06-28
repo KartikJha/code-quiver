@@ -1,5 +1,7 @@
 package com.kartik.compcoding;
 
+import com.kartik.compcoding.lib.linkedList.ListNode;
+
 public class RemoveKFromLinkedList {
     static ListNode<Integer> removeKFromList(ListNode<Integer> l, int k) {
         ListNode curr = l, prev = null;
