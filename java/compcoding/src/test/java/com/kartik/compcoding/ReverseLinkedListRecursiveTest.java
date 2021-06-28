@@ -1,5 +1,7 @@
 package com.kartik.compcoding;
 
+import com.kartik.compcoding.lib.linkedList.ListNode;
+
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,6 +1,9 @@
 package com.kartik.compcoding;
 
 import org.junit.Test;
+
+import com.kartik.compcoding.lib.linkedList.ListNode;
+
 import org.junit.Assert;
 
 public class AddOneToLinkedListTest {

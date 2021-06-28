@@ -1,5 +1,7 @@
 package com.kartik.compcoding;
 
+import com.kartik.compcoding.lib.linkedList.ListNode;
+
 /**
  * jumbotail interview question
  * couldn't answer on the spot

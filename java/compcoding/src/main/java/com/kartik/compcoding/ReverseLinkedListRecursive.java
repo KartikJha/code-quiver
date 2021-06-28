@@ -1,5 +1,7 @@
 package com.kartik.compcoding;
 
+import com.kartik.compcoding.lib.linkedList.ListNode;
+
 public class ReverseLinkedListRecursive {
     public ListNode reverseList(ListNode head) {
         // return reverseListRecur(null, null, head);
