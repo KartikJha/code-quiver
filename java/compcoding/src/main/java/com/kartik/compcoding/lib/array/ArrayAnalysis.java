@@ -36,4 +36,17 @@ public class ArrayAnalysis {
         }
         return Arrays.<Integer>asList(dRows, dCols);
     }
+    /**
+     * max sum of min(ai, bi)
+     * @param nums
+     * @return
+     */
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);
+        int res = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            res += nums[i];
+        }
+        return res;
+    }
 }
