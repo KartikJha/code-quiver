@@ -11,7 +11,7 @@ public class ArrayAnalysis {
         lookupList.add(new HashMap<>());
         lookupList.add(new HashMap<>());
         int rows = matrix.length, cols = matrix[0].length;
-        int dRows = 0, dCols = 0;
+        int dRows = 0, dCols = 0; 
         Map<String, Boolean> isDuplicateAccounted = new HashMap<>();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -48,5 +48,28 @@ public class ArrayAnalysis {
             res += nums[i];
         }
         return res;
+    }
+    /**
+     * Given an array nums of 0s and 1s and an integer k, return True if all 1's are at least k places away from each other, otherwise return False.
+     * @param nums
+     * @param k
+     * @return
+     */
+    public boolean kLengthApart(int[] nums, int k) {
+        int prev = -1;
+        for (int i = 0; i < nums.length; i++) {
+            int e = nums[i];
+            if (e == 1) {
+                if (prev == -1) {
+                    prev = i;
+                } else {
+                    if (i - prev - 1 < k) {
+                        return false;
+                    }
+                    prev = i;
+                }
+            }
+        }
+        return true;
     }
 }
