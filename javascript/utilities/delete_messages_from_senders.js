@@ -47,7 +47,7 @@ const senders = [
   'communication@iciciprulife.com'
 ]
 
-const token = 'Bearer ya29.a0AfB_byCwEKoTDx8rL7cKwz29iN-_7I-Hy_voA2HL-pAMsPnFv9FvkcXQsh3aIetAoAAg_bF8yMaFYKcpkeT9wMouXbxO4nqMFwP9ZvV2OAUzycRNBVToFT4AC4TLVSS7qYUAx8TBEYGTz4uflbbmEFt9Wh4nn-1RIPqn0dbFUFfUaCgYKAa8SARISFQGOcNnCI9Vtw-c7mwJhWwDvUHy8fA0179'
+const token = ''
 
 async function listMessageIds(sender) {
   const data = await fetch(`https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages?maxResults=500&q=from%3A${sender}&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM`, {
