@@ -1,5 +1,4 @@
-const fs = require('fs');
-const { send } = require('process');
+import fs from 'fs';
 
 const senders = [
   'no-reply%40primevideo.com',
