@@ -1,6 +1,10 @@
 import fs from 'fs';
 
 const senders = [
+  'customer.communication@custcom.yesbank.email',
+  'support@turing.com',
+  'noreply@instahyre.com',
+  'noreply@steampowered.com',
   'no-reply%40primevideo.com',
   'jobs-listings%40linkedin.com',
   'linkedin%40e.linkedin.com',
@@ -43,7 +47,10 @@ const senders = [
   'security-noreply@linkedin.com',
   'support@chorki.com',
   'nse_alerts@nse.co.in',
-  'communication@iciciprulife.com'
+  'communication@iciciprulife.com',
+  'alert@jupiter.money',
+  'info@hirist.com',
+  'info@naukri.com'
 ]
 
 const token = ''
