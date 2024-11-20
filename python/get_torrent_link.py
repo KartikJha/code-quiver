@@ -1,4 +1,4 @@
-import httpx
+import httpx # type: ignore
 import re
 import os
 

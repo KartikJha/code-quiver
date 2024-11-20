@@ -5,7 +5,6 @@ async function x() {
        let x = 4;
     }
 
-
     const apiDataList = [2, 3, 4, 7];
 
     const apiPromiseList = apiDataList.map(d => fetch(`https://kartikjha.github.io/${d}`));

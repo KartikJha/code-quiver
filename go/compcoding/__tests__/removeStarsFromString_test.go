@@ -1,0 +1,59 @@
+package compcoding
+
+import (
+	"code_quiver/go/compcoding"
+	"testing"
+)
+
+func TestRemoveStar(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{
+			name:     "empty string",
+			input:    "",
+			expected: "",
+		},
+		{
+			name:     "no stars",
+			input:    "hello",
+			expected: "hello",
+		},
+		{
+			name:     "single star",
+			input:    "leet*code",
+			expected: "leecode",
+		},
+		{
+			name:     "multiple stars",
+			input:    "erase*****",
+			expected: "",
+		},
+		{
+			name:     "consecutive stars",
+			input:    "abc**def",
+			expected: "abdef",
+		},
+		{
+			name:     "star at beginning",
+			input:    "*abc",
+			expected: "bc",
+		},
+		{
+			name:     "complex case",
+			input:    "a*b*c*d",
+			expected: "abcd",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := compcoding.RemoveStars(tt.input)
+			if result != tt.expected {
+				t.Errorf("removeStar(%s) = %s; want %s", tt.input, result, tt.expected)
+			}
+		})
+	}
+}
