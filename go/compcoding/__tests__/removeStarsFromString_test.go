@@ -34,17 +34,22 @@ func TestRemoveStar(t *testing.T) {
 		{
 			name:     "consecutive stars",
 			input:    "abc**def",
-			expected: "abdef",
+			expected: "adef",
 		},
 		{
 			name:     "star at beginning",
 			input:    "*abc",
-			expected: "bc",
+			expected: "abc",
 		},
 		{
 			name:     "complex case",
 			input:    "a*b*c*d",
-			expected: "abcd",
+			expected: "d",
+		},
+		{
+			name:     "leetcase",
+			input:    "abb*cdfg*****x*",
+			expected: "a",
 		},
 	}
 

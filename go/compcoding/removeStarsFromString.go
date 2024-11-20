@@ -1,8 +1,29 @@
 package compcoding
 
-import "strings"
+import (
+	"strings"
+)
 
 func RemoveStars(s string) string {
+	stack := []rune{}
+
+	for _, char := range s {
+		if char == '*' {
+			// Pop the last character if a star is encountered
+			if len(stack) > 0 {
+				stack = stack[:len(stack)-1]
+			}
+		} else {
+			// Push the character to the stack
+			stack = append(stack, char)
+		}
+	}
+
+	// Convert the stack back to a string
+	return string(stack)
+}
+
+func RemoveStarsWrongButSweet(s string) string {
 	var result strings.Builder
 
 	for j := len(s) - 1; j >= 0; j = j - 1 {
@@ -12,17 +33,25 @@ func RemoveStars(s string) string {
 
 		for sRune == "*" {
 			j = j - 1
-			sRune = string(s[j])
-			lettersToSkip = lettersToSkip + 1
+			// if j > -1 {
+			if j > -1 {
+				sRune = string(s[j])
+				lettersToSkip = lettersToSkip + 1
+			} else {
+				sRune = ""
+			}
 		}
 
 		for lettersToSkip > 0 && j > 0 {
 			j = j - 1
 			sRune = string(s[j])
 			lettersToSkip = lettersToSkip - 1
+			if sRune == "*" {
+				j = j + 1
+			}
 		}
 
-		if lettersToSkip > 0 {
+		if lettersToSkip > 0 || sRune == "" || sRune == "*" {
 			continue
 		}
 
