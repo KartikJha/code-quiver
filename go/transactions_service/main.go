@@ -1,4 +1,4 @@
-package transactions_service
+package main
 
 import (
 	"context"
@@ -23,7 +23,7 @@ func main() {
 
 	// Connect to PostgreSQL
 	var err error
-	db, err = pgxpool.New(context.Background(), "postgres://username:password@localhost:5432/transactions_db")
+	db, err = pgxpool.New(context.Background(), "postgres://postgres:your_new_password@localhost:5432/transactions_db")
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
 	}

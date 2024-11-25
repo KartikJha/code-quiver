@@ -1,6 +1,8 @@
 module code_quiver/go/transactions_service
 
-go 1.18
+go 1.21
+
+toolchain go1.23.2
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.5
