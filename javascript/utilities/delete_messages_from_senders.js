@@ -1,6 +1,17 @@
 import fs from 'fs';
 
 const senders = [
+  'no-reply@sampark.gov.in',
+  'alerts@mailer.moneycontrol.com',
+  'info@pnm.nobroker.in',
+  'no-reply@hello.redis.io',
+  'noreply1@in.crm-samsung.com',
+  'email@alerts.timespro.com',
+  'info@hirist.tech',
+  'onlinecourses@nptel.iitm.ac.in',
+  'jobalerts-noreply@linkedin.com',
+  'noreply@medium.com',
+  'hello@fi.money',
   'customer.communication@custcom.yesbank.email',
   'support@turing.com',
   'noreply@instahyre.com',
@@ -53,10 +64,10 @@ const senders = [
   'info@naukri.com'
 ]
 
-const token = ''
+const token = 'Bearer ya29.a0AXeO80S6GXW7Km5tVCScEl96CeJ21iTJollQQfOk0LRyxSdMwtlkqrvEBNglSSN72HUyBA5awXaPMy3G0nkYB9PibME-f4AX0_XJX8_2jIUTgZntxp-gbs2mO7aWYetR2hMlOtEkvzZ3APYm961sUHmubFOMZXrUncpQMhQ5wZTpulZES50KaCgYKAboSARISFQHGX2MiM_iUBj-MQssOnXRcbN_LMg0187'
 
 async function listMessageIds(sender) {
-  const data = await fetch(`https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages?maxResults=500&q=from%3A${sender}&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM`, {
+  const data1 = await fetch(`https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages?maxResults=500&q=from%3A${sender}&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM`, {
     "credentials": "include",
     "headers": {
       "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0",
@@ -79,8 +90,31 @@ async function listMessageIds(sender) {
     "mode": "cors"
   });
 
+  const data = await fetch(`https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages?maxResults=500&q=from%3A${sender}&key=AIzaSyBeo4NGA__U6Xxy-aBE6yFm19pgq8TY-TM`, {
+    "credentials": "include",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0",
+        "Accept": "*/*",
+        "Accept-Language": "en-US,en;q=0.5",
+        "X-ClientDetails": "appVersion=5.0%20(X11)&platform=Linux%20x86_64&userAgent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64%3B%20rv%3A130.0)%20Gecko%2F20100101%20Firefox%2F130.0",
+        "Authorization": `${token}`,
+        "X-Requested-With": "XMLHttpRequest",
+        "X-JavaScript-User-Agent": "apix/3.0.0 google-api-javascript-client/1.1.0",
+        "X-Origin": "https://explorer.apis.google.com",
+        "X-Referer": "https://explorer.apis.google.com",
+        "X-Goog-Encode-Response-If-Executable": "base64",
+        "Alt-Used": "content-gmail.googleapis.com",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin"
+    },
+    "referrer": "https://content-gmail.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.5oZHy0SiJxw.O%2Fd%3D1%2Frs%3DAHpOoo-Hry6DG-RE4t9kNz_t6hiwmwXOmA%2Fm%3D__features__",
+    "method": "GET",
+    "mode": "cors"
+});
+
   const body = await data.json();
-  
+  const body1 = await data1.json();
   if (!body.resultSizeEstimate) {
     return [[], 0];
   }
@@ -88,7 +122,7 @@ async function listMessageIds(sender) {
 }
 
 async function deleteMessageIds(ids, sender) {
-  const data = await fetch("https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages/batchDelete?alt=json&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM", {
+  const data1 = await fetch("https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages/batchDelete?alt=json&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM", {
     "credentials": "include",
     "headers": {
       "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0",
@@ -112,6 +146,31 @@ async function deleteMessageIds(ids, sender) {
     "method": "POST",
     "mode": "cors"
   });
+
+  const data = await fetch("https://content-gmail.googleapis.com/gmail/v1/users/kartik.n.jha%40gmail.com/messages/batchDelete?alt=json&key=AIzaSyBeo4NGA__U6Xxy-aBE6yFm19pgq8TY-TM", {
+    "credentials": "include",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0",
+        "Accept": "*/*",
+        "Accept-Language": "en-US,en;q=0.5",
+        "X-ClientDetails": "appVersion=5.0%20(X11)&platform=Linux%20x86_64&userAgent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64%3B%20rv%3A130.0)%20Gecko%2F20100101%20Firefox%2F130.0",
+         "Authorization": `${token}`,
+        "X-Requested-With": "XMLHttpRequest",
+        "X-JavaScript-User-Agent": "apix/3.0.0 google-api-javascript-client/1.1.0",
+        "Content-Type": "application/json",
+        "X-Origin": "https://explorer.apis.google.com",
+        "X-Referer": "https://explorer.apis.google.com",
+        "X-Goog-Encode-Response-If-Executable": "base64",
+        "Alt-Used": "content-gmail.googleapis.com",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin"
+    },
+    "referrer": "https://content-gmail.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.5oZHy0SiJxw.O%2Fd%3D1%2Frs%3DAHpOoo-Hry6DG-RE4t9kNz_t6hiwmwXOmA%2Fm%3D__features__",
+    "body": JSON.stringify({ids}),
+    "method": "POST",
+    "mode": "cors"
+});
 
   console.log(`${ids.length} messages ${data.status}, sender ${sender}`);
 
