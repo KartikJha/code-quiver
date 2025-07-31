@@ -1,0 +1,380 @@
+{
+    "data": {
+        "active": [
+            {
+                "fillInfo": {
+                    "dayBuy": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySell": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySellV3": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "demat": {
+                        "amt": 4434.0,
+                        "avgPrice": 2217.0,
+                        "qty": 2
+                    },
+                    "t1": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    }
+                },
+                "instrument": [
+                    {
+                        "e": "NSE_EQ",
+                        "i": "NSE_EQ|INE237A01028",
+                        "s": "KOTAKBANK",
+                        "t": 1922
+                    },
+                    {
+                        "e": "BSE_EQ",
+                        "i": "BSE_EQ|INE237A01028",
+                        "s": "KOTAKBANK",
+                        "t": 500247
+                    }
+                ],
+                "instrument_key": "NSE_EQ|INE237A01028",
+                "netInfo": {
+                    "netAmt": 4434.0,
+                    "buyQty": 2,
+                    "buyValue": 4434.0,
+                    "netAvgPrice": 2217.0,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "netInfoV3": {
+                    "netAmt": 4434.0,
+                    "buyQty": 2,
+                    "buyValue": 4434.0,
+                    "netAvgPrice": 2217.0,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "usedQty": 0,
+                "additionalInfo": {
+                    "haircut": 0.15,
+                    "cnc_used_quantity": 0,
+                    "collateral_qty": 0
+                },
+                "metaData": {
+                    "hasCAAnnounced": false,
+                    "hasCA": true,
+                    "caCode": "",
+                    "isDpTransferred": false,
+                    "showCANudge": false
+                },
+                "investmentCategory": null
+            },
+            {
+                "fillInfo": {
+                    "dayBuy": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySell": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySellV3": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "demat": {
+                        "amt": 2045.0,
+                        "avgPrice": 20.45,
+                        "qty": 100
+                    },
+                    "t1": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    }
+                },
+                "instrument": [
+                    {
+                        "e": "NSE_EQ",
+                        "i": "NSE_EQ|INE270A01029",
+                        "s": "ALOKINDS",
+                        "t": 17675
+                    },
+                    {
+                        "e": "BSE_EQ",
+                        "i": "BSE_EQ|INE270A01029",
+                        "s": "ALOKINDS",
+                        "t": 521070
+                    }
+                ],
+                "instrument_key": "NSE_EQ|INE270A01029",
+                "netInfo": {
+                    "netAmt": 2045.0,
+                    "buyQty": 100,
+                    "buyValue": 2045.0,
+                    "netAvgPrice": 20.45,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "netInfoV3": {
+                    "netAmt": 2045.0,
+                    "buyQty": 100,
+                    "buyValue": 2045.0,
+                    "netAvgPrice": 20.45,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "usedQty": 0,
+                "additionalInfo": {
+                    "haircut": 0.24,
+                    "cnc_used_quantity": 0,
+                    "collateral_qty": 0
+                },
+                "metaData": {
+                    "hasCAAnnounced": false,
+                    "hasCA": false,
+                    "caCode": "",
+                    "isDpTransferred": false,
+                    "showCANudge": false
+                },
+                "investmentCategory": null
+            },
+            {
+                "fillInfo": {
+                    "dayBuy": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySell": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySellV3": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "demat": {
+                        "amt": 1456.56,
+                        "avgPrice": 80.92,
+                        "qty": 18
+                    },
+                    "t1": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    }
+                },
+                "instrument": [
+                    {
+                        "e": "NSE_EQ",
+                        "i": "NSE_EQ|INE548A01028",
+                        "s": "HFCL",
+                        "t": 21951
+                    },
+                    {
+                        "e": "BSE_EQ",
+                        "i": "BSE_EQ|INE548A01028",
+                        "s": "HFCL",
+                        "t": 500183
+                    }
+                ],
+                "instrument_key": "NSE_EQ|INE548A01028",
+                "netInfo": {
+                    "netAmt": 1456.56,
+                    "buyQty": 18,
+                    "buyValue": 1456.56,
+                    "netAvgPrice": 80.92,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "netInfoV3": {
+                    "netAmt": 1456.56,
+                    "buyQty": 18,
+                    "buyValue": 1456.56,
+                    "netAvgPrice": 80.92,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "usedQty": 0,
+                "additionalInfo": {
+                    "haircut": 0.23,
+                    "cnc_used_quantity": 0,
+                    "collateral_qty": 0
+                },
+                "metaData": {
+                    "hasCAAnnounced": false,
+                    "hasCA": true,
+                    "caCode": "",
+                    "isDpTransferred": false,
+                    "showCANudge": false
+                },
+                "investmentCategory": null
+            },
+            {
+                "fillInfo": {
+                    "dayBuy": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySell": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySellV3": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "demat": {
+                        "amt": 3145.0,
+                        "avgPrice": 31.45,
+                        "qty": 100
+                    },
+                    "t1": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    }
+                },
+                "instrument": [
+                    {
+                        "e": "NSE_EQ",
+                        "i": "NSE_EQ|INE752G01015",
+                        "s": "MSPL",
+                        "t": 11919
+                    },
+                    {
+                        "e": "BSE_EQ",
+                        "i": "BSE_EQ|INE752G01015",
+                        "s": "MSPL",
+                        "t": 532650
+                    }
+                ],
+                "instrument_key": "NSE_EQ|INE752G01015",
+                "netInfo": {
+                    "netAmt": 3145.0,
+                    "buyQty": 100,
+                    "buyValue": 3145.0,
+                    "netAvgPrice": 31.45,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "netInfoV3": {
+                    "netAmt": 3145.0,
+                    "buyQty": 100,
+                    "buyValue": 3145.0,
+                    "netAvgPrice": 31.45,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "usedQty": 0,
+                "additionalInfo": {
+                    "haircut": 0.23,
+                    "cnc_used_quantity": 0,
+                    "collateral_qty": 0
+                },
+                "metaData": {
+                    "hasCAAnnounced": false,
+                    "hasCA": false,
+                    "caCode": "",
+                    "isDpTransferred": false,
+                    "showCANudge": false
+                },
+                "investmentCategory": null
+            },
+            {
+                "fillInfo": {
+                    "dayBuy": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySell": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "daySellV3": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    },
+                    "demat": {
+                        "amt": 2077.13,
+                        "avgPrice": 188.83,
+                        "qty": 11
+                    },
+                    "t1": {
+                        "amt": 0.0,
+                        "avgPrice": 0.0,
+                        "qty": 0
+                    }
+                },
+                "instrument": [
+                    {
+                        "e": "NSE_EQ",
+                        "i": "NSE_EQ|INE962Y01021",
+                        "s": "IRCON",
+                        "t": 4986
+                    },
+                    {
+                        "e": "BSE_EQ",
+                        "i": "BSE_EQ|INE962Y01021",
+                        "s": "IRCON",
+                        "t": 541956
+                    }
+                ],
+                "instrument_key": "NSE_EQ|INE962Y01021",
+                "netInfo": {
+                    "netAmt": 2077.13,
+                    "buyQty": 11,
+                    "buyValue": 2077.13,
+                    "netAvgPrice": 188.83,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "netInfoV3": {
+                    "netAmt": 2077.13,
+                    "buyQty": 11,
+                    "buyValue": 2077.13,
+                    "netAvgPrice": 188.83,
+                    "sellQty": 0,
+                    "sellValue": 0.0
+                },
+                "usedQty": 0,
+                "additionalInfo": {
+                    "haircut": 0.25,
+                    "cnc_used_quantity": 0,
+                    "collateral_qty": 0
+                },
+                "metaData": {
+                    "hasCAAnnounced": false,
+                    "hasCA": true,
+                    "caCode": "",
+                    "isDpTransferred": false,
+                    "showCANudge": false
+                },
+                "investmentCategory": null
+            }
+        ],
+        "inactive": [],
+        "inactive_holdings_present": false
+    },
+    "success": true,
+    "timestamp": 0
+}
