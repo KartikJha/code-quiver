@@ -1,0 +1,59 @@
+{
+    "sell_recommendations": [
+        {
+            "stock": "KOTAKBANK",
+            "quantity": 2,
+            "price": 1978.60,
+            "justification": "Low momentum, limited short-term upside"
+        },
+        {
+            "stock": "HFCL",
+            "quantity": 18,
+            "price": 77.67,
+            "justification": "Sideways trend, limited near-term upside"
+        },
+        {
+            "stock": "ALOKINDS",
+            "quantity": 100,
+            "price": 19.50,
+            "justification": "Flat performance with low momentum"
+        }
+    ],
+    "buy_recommendations": [
+        {
+            "stock": "MSP Steel & Power Ltd",
+            "quantity": 50,
+            "price": 34.50,
+            "invested_amount": 1725.00,
+            "rationale": "Top momentum pick with 10%+ daily gains and strong volume"
+        },
+        {
+            "stock": "SPML Infra Ltd",
+            "quantity": 7,
+            "price": 308.00,
+            "invested_amount": 2156.00,
+            "rationale": "High momentum, infrastructure sector with volume confirmation"
+        },
+        {
+            "stock": "Asian Energy Services Ltd",
+            "quantity": 5,
+            "price": 352.00,
+            "invested_amount": 1760.00,
+            "rationale": "Energy sector momentum with volume support"
+        },
+        {
+            "stock": "Jainik Power Cables",
+            "quantity": 1,
+            "price": 106.80,
+            "invested_amount": 106.80,
+            "rationale": "Midcap with 8%+ gain, diversification and upside potential"
+        }
+    ],
+    "total_sell_amount": 7305.26,
+    "total_buy_amount": 5747.80,
+    "cash_buffer": {
+        "amount": 1461.05,
+        "reason": "20% of capital from sells retained as buffer"
+    },
+    "expected_return": "20% in 10 days"
+}
