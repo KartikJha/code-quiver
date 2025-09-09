@@ -8,6 +8,26 @@ echo "=== Installing prerequisites ==="
 sudo apt install -y curl git build-essential unzip wget software-properties-common gnupg
 
 # ----------------------------
+# Fix for pyenv: Install build dependencies
+# ----------------------------
+echo "=== Installing pyenv build dependencies ==="
+sudo apt install -y \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  llvm \
+  libncurses5-dev \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev \
+  libffi-dev \
+  liblzma-dev \
+  python3-openssl \
+  git
+
+# ----------------------------
 # 1. Install NVM
 # ----------------------------
 if ! command -v nvm &> /dev/null; then
@@ -30,6 +50,16 @@ if ! command -v pyenv &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 else
   echo "pyenv already installed"
+fi
+
+# ----------------------------
+# 2b. Register system Python inside pyenv
+# ----------------------------
+echo "=== Registering system Python inside pyenv ==="
+pyenv rehash
+if ! pyenv versions --bare | grep -q '^system$'; then
+  # Ensure pyenv knows about the system interpreter
+  pyenv install --skip-existing system || true
 fi
 
 # ----------------------------
