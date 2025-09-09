@@ -5,7 +5,7 @@ echo "=== Updating system ==="
 sudo apt update && sudo apt upgrade -y
 
 echo "=== Installing prerequisites ==="
-sudo apt install -y curl git build-essential unzip wget software-properties-common
+sudo apt install -y curl git build-essential unzip wget software-properties-common gnupg
 
 # ----------------------------
 # 1. Install NVM
@@ -69,7 +69,31 @@ code --install-extension msjsdiag.debugger-for-chrome --force
 code --install-extension google.android-emulator-extension --force || true
 
 # ----------------------------
-# 6. Environment Setup
+# 6. SSH Setup for GitHub
+# ----------------------------
+echo "=== Setting up SSH keys for GitHub ==="
+
+SSH_KEY="$HOME/.ssh/id_ed25519"
+if [ ! -f "$SSH_KEY" ]; then
+  echo "No SSH key found, generating a new ed25519 key..."
+  mkdir -p ~/.ssh
+  ssh-keygen -t ed25519 -C "your_email@example.com" -f "$SSH_KEY" -N ""
+else
+  echo "SSH key already exists at $SSH_KEY"
+fi
+
+# Start ssh-agent
+eval "$(ssh-agent -s)"
+ssh-add "$SSH_KEY"
+
+# Add GitHub to known hosts (avoids authenticity prompt)
+ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+echo "=== Your public SSH key (add this to GitHub: https://github.com/settings/keys) ==="
+cat "${SSH_KEY}.pub"
+
+# ----------------------------
+# 7. Environment Setup
 # ----------------------------
 echo "=== Updating .bashrc / .zshrc ==="
 SHELL_CONFIG="$HOME/.bashrc"
@@ -85,6 +109,8 @@ fi
   echo "export PATH=\"\$HOME/.pyenv/bin:\$PATH\""
   echo "eval \"\$(pyenv init -)\""
   echo "eval \"\$(pyenv virtualenv-init -)\""
+  echo "eval \"\$(ssh-agent -s)\" >/dev/null"
+  echo "ssh-add ~/.ssh/id_ed25519 >/dev/null 2>&1"
 } >> "$SHELL_CONFIG"
 
 echo "=== DONE! Restart your shell or run 'source $SHELL_CONFIG' ==="
