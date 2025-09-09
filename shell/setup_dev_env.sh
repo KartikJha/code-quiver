@@ -113,4 +113,12 @@ fi
   echo "ssh-add ~/.ssh/id_ed25519 >/dev/null 2>&1"
 } >> "$SHELL_CONFIG"
 
-echo "=== DONE! Restart your shell or run 'source $SHELL_CONFIG' ==="
+# ----------------------------
+# 8. Create code workspace
+# ----------------------------
+echo "=== Creating ~/Documents/code directory ==="
+mkdir -p ~/Documents/code
+cd ~/Documents/code
+
+echo "=== DONE! Workspace ready at ~/Documents/code ==="
+echo "Restart your shell or run: source $SHELL_CONFIG"
