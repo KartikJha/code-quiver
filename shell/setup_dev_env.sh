@@ -5,7 +5,7 @@ echo "=== Updating system ==="
 sudo apt update && sudo apt upgrade -y
 
 echo "=== Installing prerequisites ==="
-sudo apt install -y curl git build-essential unzip wget software-properties-common gnupg
+sudo apt install -y curl git build-essential unzip wget software-properties-common gnupg cmake python3-dev ninja-build
 
 # ----------------------------
 # Fix for pyenv: Install build dependencies
@@ -53,7 +53,7 @@ else
 fi
 
 # ----------------------------
-# 2b. Register system Python inside pyenv
+# 2a. Register system Python inside pyenv
 # ----------------------------
 echo "=== Registering system Python inside pyenv ==="
 pyenv rehash
@@ -61,6 +61,26 @@ if ! pyenv versions --bare | grep -q '^system$'; then
   # Ensure pyenv knows about the system interpreter
   pyenv install --skip-existing system || true
 fi
+
+# 2b. Create pyenv virtualenv
+# ----------------------------
+PYENV_PYTHON_VERSION="3.13.0"
+VENV_NAME="ml-ai"
+
+if ! pyenv versions --bare | grep -q "$PYENV_PYTHON_VERSION"; then
+  echo "=== Installing Python $PYENV_PYTHON_VERSION via pyenv ==="
+  pyenv install $PYENV_PYTHON_VERSION
+fi
+
+if ! pyenv virtualenvs --bare | grep -q "$VENV_NAME"; then
+  echo "=== Creating pyenv virtualenv $VENV_NAME ==="
+  pyenv virtualenv $PYENV_PYTHON_VERSION $VENV_NAME
+fi
+
+echo "=== Activating pyenv virtualenv $VENV_NAME ==="
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv activate $VENV_NAME
 
 # ----------------------------
 # 3. Install ADB & Fastboot
@@ -85,7 +105,7 @@ else
 fi
 
 # ----------------------------
-# 5. Install VS Code Extensions
+# 5. VS Code Extensions
 # ----------------------------
 echo "=== Installing VS Code Extensions ==="
 code --install-extension ms-python.python --force
@@ -102,7 +122,6 @@ code --install-extension google.android-emulator-extension --force || true
 # 6. SSH Setup for GitHub
 # ----------------------------
 echo "=== Setting up SSH keys for GitHub ==="
-
 SSH_KEY="$HOME/.ssh/id_ed25519"
 if [ ! -f "$SSH_KEY" ]; then
   echo "No SSH key found, generating a new ed25519 key..."
@@ -112,20 +131,16 @@ else
   echo "SSH key already exists at $SSH_KEY"
 fi
 
-# Start ssh-agent
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_KEY"
-
-# Add GitHub to known hosts (avoids authenticity prompt)
 ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
 
-echo "=== Your public SSH key (add this to GitHub: https://github.com/settings/keys) ==="
+echo "=== Your public SSH key ==="
 cat "${SSH_KEY}.pub"
 
 # ----------------------------
 # 7. Environment Setup
 # ----------------------------
-echo "=== Updating .bashrc / .zshrc ==="
 SHELL_CONFIG="$HOME/.bashrc"
 if [[ $SHELL == *"zsh"* ]]; then
   SHELL_CONFIG="$HOME/.zshrc"
@@ -150,5 +165,49 @@ echo "=== Creating ~/Documents/code directory ==="
 mkdir -p ~/Documents/code
 cd ~/Documents/code
 
-echo "=== DONE! Workspace ready at ~/Documents/code ==="
-echo "Restart your shell or run: source $SHELL_CONFIG"
+# ----------------------------
+# 9. Create /usr/local/lib for installs
+# ----------------------------
+sudo mkdir -p /usr/local/lib
+sudo chown "$USER":"$USER" /usr/local/lib
+
+# ----------------------------
+# 10. Install HuggingFace CLI
+# ----------------------------
+echo "=== Installing HuggingFace CLI ==="
+pip install --upgrade pip
+pip install huggingface_hub --target /usr/local/lib
+
+# ----------------------------
+# 11. Clone & Install Apache TVM
+# ----------------------------
+echo "=== Cloning Apache TVM ==="
+cd /usr/local/lib
+if [ ! -d "tvm" ]; then
+  git clone --recursive https://github.com/apache/tvm.git
+fi
+
+echo "=== Building TVM ==="
+cd tvm
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/lib/tvm_install ..
+make -j$(nproc)
+make install
+
+# ----------------------------
+# 12. Clone & Build MLC-LLM
+# ----------------------------
+echo "=== Cloning MLC-LLM ==="
+cd /usr/local/lib
+if [ ! -d "mlc-llm" ]; then
+  git clone https://github.com/mlc-ai/mlc-llm.git
+fi
+
+echo "=== Building MLC-LLM ==="
+cd mlc-llm
+# Apply our monkey-patch or fix scripts as needed here
+python -m pip install -e .
+
+echo "=== DONE! ==="
+echo "Activate your environment with: pyenv activate ml-ai"

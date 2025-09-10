@@ -1,6 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "/home/kartikjha/Documents/tools/gpt-oss-20b/original/"
+model_name = "/usr/local/lib/gpt-oss-20b-MLX-8bit"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
