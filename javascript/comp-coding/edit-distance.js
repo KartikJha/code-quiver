@@ -21,4 +21,25 @@ export default (s1, s2) => {
     // subs + deletion
     return overlapStringsAndGetDiff(s2, s1, lenDiff);
   }
-};
+}
+
+/**
+node:internal/modules/cjs/loader:1413
+  throw err;
+  ^
+
+Error: Cannot find module '/usr/local/lib/vscode-js-debug/out/src/nodeDebug.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+N
+*/

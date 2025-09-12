@@ -8,7 +8,7 @@ require("lazy").setup({
 
   -- LSP & Completion
   { 'neovim/nvim-lspconfig' },
-  { 'williamboman/mason.nvim' },                
+  { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim', version = '*' }, -- pinned stable
   { 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -16,7 +16,7 @@ require("lazy").setup({
 
   -- Debugging
   { 'mfussenegger/nvim-dap' },
-  { 'nvim-neotest/nvim-nio' },         -- required by dap-ui
+  { 'nvim-neotest/nvim-nio' }, -- required by dap-ui
   { 'rcarriga/nvim-dap-ui' },
 
   -- Git integration
@@ -44,17 +44,13 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
 }
 
--- =============== LSP SETUP (fixed Mason) ===============
+-- =============== LSP SETUP ===============
 require("mason").setup()
-
--- Fixed: no deprecated automatic_enable
--- require("mason-lspconfig").setup({
---     ensure_installed = { "tsserver", "pyright", "bashls" },
--- })
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- Manually setup servers
 lspconfig.tsserver.setup { capabilities = capabilities }
 lspconfig.pyright.setup { capabilities = capabilities }
 lspconfig.bashls.setup { capabilities = capabilities }
@@ -75,7 +71,19 @@ cmp.setup {
 -- =============== DAP SETUP ===============
 local dap = require('dap')
 local dapui = require('dapui')
+
 dapui.setup()
+
+-- Auto open/close UI
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
 
 -- Python Debug Adapter
 dap.adapters.python = {
@@ -85,16 +93,16 @@ dap.adapters.python = {
 }
 dap.configurations.python = {
   {
+    name = 'Launch Python file',
     type = 'python',
     request = 'launch',
-    name = 'Launch file',
     program = '${file}',
     pythonPath = 'python3',
   },
 }
 
 -- Node / JavaScript Debug Adapter
-local js_debug_path = "/usr/local/lib/vscode-js-debug"
+local js_debug_path = "/usr/local/lib/vscode-js-debug" -- your cloned repo
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
@@ -102,6 +110,7 @@ dap.adapters.node2 = {
 }
 dap.configurations.javascript = {
   {
+    name = 'Launch JS file',
     type = 'node2',
     request = 'launch',
     program = '${file}',
@@ -110,7 +119,17 @@ dap.configurations.javascript = {
     protocol = 'inspector',
   },
 }
-dap.configurations.typescript = dap.configurations.javascript
+dap.configurations.typescript = {
+  {
+    name = 'Launch TS file',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+  },
+}
 
 -- Keybindings for DAP
 vim.keymap.set('n', '<F5>', dap.continue)
