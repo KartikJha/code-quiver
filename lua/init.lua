@@ -98,9 +98,9 @@ dap.configurations.python = {
     request = 'launch',
     program = '${file}',
     pythonPath = 'python3',
+    console = 'integratedTerminal',  -- <-- this line is key
   },
 }
-
 -- Node / JavaScript Debug Adapter
 local js_debug_path = "/usr/local/lib/vscode-js-debug" -- your cloned repo
 dap.adapters.node2 = {
