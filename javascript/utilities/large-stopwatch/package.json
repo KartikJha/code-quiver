@@ -1,5 +1,5 @@
 {
-  "name": "@terminal-tools/large-stopwatch",
+  "name": "large-stopwatch",
   "version": "1.0.0",
   "description": "A large display terminal stopwatch with resume functionality",
   "main": "index.js",
@@ -33,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/large-stopwatch.git"
+    "url": "https://github.com/KartikJha/code-quiver.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/large-stopwatch/issues"
+    "url": "https://github.com/KartikJha/code-quiver.git/issues"
   },
-  "homepage": "https://github.com/your-username/large-stopwatch#readme"
+  "homepage": "https://github.com/KartikJha/code-quiver/tree/master/javascript/utilities/large-stopwatch#readme"
 }
