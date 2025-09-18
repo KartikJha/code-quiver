@@ -1,14 +1,17 @@
 const figlet = require('figlet');
 const chalk = require('chalk');
+const StopwatchStorage = require('./storage');
 
 class Stopwatch {
   constructor(options = {}) {
     this.fancy = options.fancy || false;
     this.compact = options.compact || false;
     this.silent = options.silent || false;
+    this.label = options.label || null;
     this.startTime = null;
     this.previousMs = 0;
     this.interval = null;
+    this.storage = new StopwatchStorage();
   }
 
   parseTime(timeStr) {
@@ -53,28 +56,16 @@ class Stopwatch {
   }
 
   displayHeader() {
+    const headerText = this.label ? `STOPWATCH - ${this.label.toUpperCase()}` : 'STOPWATCH';
+    
     if (this.fancy) {
-      // Note: chalk.rainbow doesn't exist, using individual colors
-      const colors = ['red', 'yellow', 'green', 'cyan', 'blue', 'magenta'];
-      let colorIndex = 0;
-      const rainbowText = (text) => {
-        return text.split('').map(char => {
-          if (char !== ' ') {
-            const color = colors[colorIndex % colors.length];
-            colorIndex++;
-            return chalk[color](char);
-          }
-          return char;
-        }).join('');
-      };
-      
-      console.log(rainbowText('╔══════════════════════════════════════════╗'));
-      console.log(rainbowText('║              STOPWATCH                   ║'));
-      console.log(rainbowText('╚══════════════════════════════════════════╝'));
+      console.log(chalk.rainbow('╔═══════════════════════════════════════════╗'));
+      console.log(chalk.rainbow(`║              ${headerText.padEnd(15)}              ║`));
+      console.log(chalk.rainbow('╚═══════════════════════════════════════════╝'));
     } else {
-      console.log(chalk.green('┌─────────────────────────────────────────┐'));
-      console.log(chalk.green('│              STOPWATCH                  │'));
-      console.log(chalk.green('└─────────────────────────────────────────┘'));
+      console.log(chalk.green('┌─────────────────────────────────────────────┐'));
+      console.log(chalk.green(`│              ${headerText.padEnd(15)}              │`));
+      console.log(chalk.green('└─────────────────────────────────────────────┘'));
     }
     console.log();
   }
@@ -83,11 +74,11 @@ class Stopwatch {
     if (this.compact) {
       // Simple large text without figlet
       console.log();
-      console.log(chalk.cyan('    ███████████████████████████████████'));
-      console.log(chalk.cyan('    █                                 █'));
-      console.log(chalk.cyan(`    █         ${timeStr.padStart(15)}      █`));
-      console.log(chalk.cyan('    █                                 █'));
-      console.log(chalk.cyan('    ███████████████████████████████████'));
+      console.log('    ███████████████████████████████████');
+      console.log('    █                                 █');
+      console.log(`    █         ${timeStr.padStart(15)}      █`);
+      console.log('    █                                 █');
+      console.log('    ███████████████████████████████████');
       console.log();
     } else {
       try {
@@ -98,26 +89,14 @@ class Stopwatch {
         });
         
         if (this.fancy) {
-          // Apply rainbow effect to figlet text
-          const colors = ['red', 'yellow', 'green', 'cyan', 'blue', 'magenta'];
-          const lines = figletText.split('\n');
-          lines.forEach((line, lineIndex) => {
-            const coloredLine = line.split('').map((char, charIndex) => {
-              if (char !== ' ') {
-                const color = colors[(lineIndex + charIndex) % colors.length];
-                return chalk[color](char);
-              }
-              return char;
-            }).join('');
-            console.log(coloredLine);
-          });
+          console.log(chalk.rainbow(figletText));
         } else {
           console.log(chalk.cyan(figletText));
         }
       } catch (err) {
         // Fallback if figlet fails
         console.log();
-        console.log(chalk.cyan(`         ${timeStr}`));
+        console.log(`         ${timeStr}`);
         console.log();
       }
     }
@@ -126,21 +105,13 @@ class Stopwatch {
   displayFooter() {
     console.log();
     if (this.fancy) {
-      const colors = ['red', 'yellow', 'green', 'cyan', 'blue', 'magenta'];
-      const rainbowLine = (text) => {
-        return text.split('').map((char, index) => {
-          const color = colors[index % colors.length];
-          return chalk[color](char);
-        }).join('');
-      };
-      
-      console.log(rainbowLine('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
-      console.log(rainbowLine('              Press Ctrl+C to stop              '));
-      console.log(rainbowLine('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
+      console.log(chalk.rainbow('╔═══════════════════════════════════════════╗'));
+      console.log(chalk.rainbow('║              Press Ctrl+C to stop              ║'));
+      console.log(chalk.rainbow('╚═══════════════════════════════════════════╝'));
     } else {
-      console.log(chalk.cyan('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
-      console.log(chalk.cyan('              Press Ctrl+C to stop              '));
-      console.log(chalk.cyan('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
+      console.log(chalk.cyan('┌─────────────────────────────────────────────┐'));
+      console.log(chalk.cyan('│              Press Ctrl+C to stop              │'));
+      console.log(chalk.cyan('└─────────────────────────────────────────────┘'));
     }
   }
 
@@ -155,22 +126,51 @@ class Stopwatch {
       });
       console.log(chalk.red(stopText));
     } catch (err) {
-      console.log(chalk.red.bold('\n    STOPPED\n'));
+      console.log(chalk.red('STOPPED'));
     }
     
     console.log();
-    console.log(chalk.yellow(`Final time: ${this.formatTime(finalTime)}`));
+    
+    if (this.label) {
+      // Save session data and display results
+      const sessionResult = this.storage.addSession(this.label, finalTime);
+      
+      console.log(chalk.yellow(`📊 Label: ${this.label}`));
+      console.log(chalk.yellow(`⏱️  Lap Time: ${this.formatTime(sessionResult.lapTime)}`));
+      console.log(chalk.yellow(`🏁 Total Time Today: ${this.formatTime(sessionResult.totalTime)}`));
+      console.log(chalk.gray(`💾 Data saved to: ~/.stopwatch-data/`));
+    } else {
+      console.log(chalk.yellow(`Final time: ${this.formatTime(finalTime)}`));
+    }
     console.log();
   }
 
+  loadLabelData() {
+    if (!this.label) return 0;
+    
+    const labelData = this.storage.getLabelData(this.label);
+    return labelData.totalTime || 0;
+  }
+
   start(resumeTimeStr = '0') {
-    try {
-      this.previousMs = this.parseTime(resumeTimeStr);
-    } catch (err) {
-      console.error(chalk.red(err.message));
-      process.exit(1);
+    // If label is provided and no explicit resume time, load from storage
+    let resumeTime = 0;
+    
+    if (this.label && resumeTimeStr === '0') {
+      resumeTime = this.loadLabelData();
+      if (resumeTime > 0 && !this.silent) {
+        console.log(chalk.blue(`📋 Loading label "${this.label}" with ${this.formatTime(resumeTime)} from today`));
+      }
+    } else {
+      try {
+        resumeTime = this.parseTime(resumeTimeStr);
+      } catch (err) {
+        console.error(chalk.red(err.message));
+        process.exit(1);
+      }
     }
 
+    this.previousMs = resumeTime;
     this.startTime = Date.now() - this.previousMs;
 
     // Setup clean exit
@@ -186,11 +186,21 @@ class Stopwatch {
     // Initial message
     if (!this.silent) {
       this.clearScreen();
-      if (this.previousMs === 0) {
-        console.log(chalk.green('\nStopwatch Started'));
+      
+      if (this.label) {
+        if (resumeTime === 0) {
+          console.log(chalk.green(`\n🏷️  Starting new session for label: "${this.label}"`));
+        } else {
+          console.log(chalk.yellow(`\n🔄 Resuming label "${this.label}" from ${this.formatTime(resumeTime)}`));
+        }
       } else {
-        console.log(chalk.yellow(`\nStopwatch Resumed from ${this.formatTime(this.previousMs)}`));
+        if (this.previousMs === 0) {
+          console.log(chalk.green('\n⏱️  Stopwatch Started'));
+        } else {
+          console.log(chalk.yellow(`\n🔄 Stopwatch Resumed from ${this.formatTime(this.previousMs)}`));
+        }
       }
+      
       console.log(chalk.cyan('Press Ctrl+C to stop\n'));
       
       setTimeout(() => {
@@ -216,4 +226,3 @@ class Stopwatch {
 }
 
 module.exports = Stopwatch;
-

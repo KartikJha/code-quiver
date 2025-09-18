@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+
 const { program } = require('commander');
 const Stopwatch = require('../lib/stopwatch');
+const StopwatchStorage = require('../lib/storage');
 
 program
   .name('stopwatch')
@@ -10,14 +12,25 @@ program
   .option('-f, --fancy', 'Use fancy colorful display')
   .option('-c, --compact', 'Use compact display without figlet')
   .option('-s, --silent', 'Start without initial messages')
+  .option('-l, --label <label>', 'Use label for storing/resuming stopwatch data')
+  .option('--list-labels', 'List all labels across multiple days')
   .parse();
 
 const options = program.opts();
 const resumeTime = program.args[0] || '0';
 
+// Handle list-labels command
+if (options.listLabels) {
+  const storage = new StopwatchStorage();
+  storage.displayLabels();
+  process.exit(0);
+}
+
 const stopwatch = new Stopwatch({
   fancy: options.fancy,
   compact: options.compact,
-  silent: options.silent
+  silent: options.silent,
+  label: options.label
 });
+
 stopwatch.start(resumeTime);
