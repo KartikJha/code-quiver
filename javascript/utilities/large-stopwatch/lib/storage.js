@@ -65,19 +65,20 @@ class StopwatchStorage {
 
   addSession(label, sessionTime, date = null) {
     const labelData = this.getLabelData(label, date);
+    const diff = sessionTime - labelData.totalTime;
     const sessionData = {
       startTime: new Date().toISOString(),
       duration: sessionTime,
       timestamp: Date.now()
     };
     
-    labelData.totalTime += sessionTime;
+    labelData.totalTime += diff;
     labelData.sessions.push(sessionData);
     
     this.saveLabelData(label, labelData, date);
     
     return {
-      lapTime: sessionTime,
+      lapTime: diff,
       totalTime: labelData.totalTime
     };
   }
