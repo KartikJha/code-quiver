@@ -1,0 +1,42 @@
+{
+  "name": "@terminal-tools/large-stopwatch",
+  "version": "1.0.0",
+  "description": "A large display terminal stopwatch with resume functionality",
+  "main": "index.js",
+  "bin": {
+    "stopwatch": "./bin/stopwatch.js",
+    "lsw": "./bin/stopwatch.js",
+    "fancy-stopwatch": "./bin/fancy-stopwatch.js",
+    "fsw": "./bin/fancy-stopwatch.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "postinstall": "node scripts/check-deps.js"
+  },
+  "keywords": [
+    "stopwatch",
+    "timer",
+    "terminal",
+    "cli",
+    "figlet",
+    "large-display"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1",
+    "figlet": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/large-stopwatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/large-stopwatch/issues"
+  },
+  "homepage": "https://github.com/your-username/large-stopwatch#readme"
+}
