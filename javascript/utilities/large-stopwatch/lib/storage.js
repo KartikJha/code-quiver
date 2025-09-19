@@ -14,10 +14,25 @@ class StopwatchStorage {
     }
   }
 
+  /*
   getDataFilePath(date = null) {
     const dateStr = date || new Date().toISOString().split('T')[0]; // YYYY-MM-DD
     return path.join(this.dataDir, `${dateStr}.json`);
   }
+*/
+  getDataFilePath(date = null) {
+  // If date is provided, use it; else use now
+  const d = date ? new Date(date) : new Date();
+
+  // Format to YYYY-MM-DD in system timezone
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0'); // months start at 0
+  const day = String(d.getDate()).padStart(2, '0');
+
+  const dateStr = `${year}-${month}-${day}`;
+
+  return path.join(this.dataDir, `${dateStr}.json`);
+}
 
   loadDayData(date = null) {
     const filePath = this.getDataFilePath(date);
