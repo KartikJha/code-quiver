@@ -1,6 +1,6 @@
 {
   "name": "large-stopwatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A large display terminal stopwatch with resume functionality",
   "main": "index.js",
   "bin": {
