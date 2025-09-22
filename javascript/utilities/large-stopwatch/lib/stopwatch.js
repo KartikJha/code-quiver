@@ -133,7 +133,7 @@ class Stopwatch {
     
     if (this.label) {
       // Save session data and display results
-      const sessionResult = this.storage.addSession(this.label, finalTime);
+      const sessionResult = this.storage.addSession(this.label, finalTime, null, this.startTime);
       
       console.log(chalk.yellow(`📊 Label: ${this.label}`));
       console.log(chalk.yellow(`⏱️  Lap Time: ${this.formatTime(sessionResult.lapTime)}`));

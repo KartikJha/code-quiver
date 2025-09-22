@@ -78,23 +78,131 @@ class StopwatchStorage {
     this.saveDayData(dayData, date);
   }
 
-  addSession(label, sessionTime, date = null) {
-    const labelData = this.getLabelData(label, date);
-    const diff = sessionTime - labelData.totalTime;
-    const sessionData = {
-      startTime: new Date().toISOString(),
-      duration: sessionTime,
-      timestamp: Date.now()
-    };
+  // Helper function to get the end of day timestamp for a given date
+  getEndOfDay(date) {
+    const endOfDay = new Date(date);
+    endOfDay.setHours(23, 59, 59, 999);
+    return endOfDay.getTime();
+  }
+
+  // Helper function to get the start of day timestamp for a given date
+  getStartOfDay(date) {
+    const startOfDay = new Date(date);
+    startOfDay.setHours(0, 0, 0, 0);
+    return startOfDay.getTime();
+  }
+
+  // Helper function to format date as YYYY-MM-DD string
+  formatDateString(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  // Helper function to add one day to a date
+  addOneDay(date) {
+    const nextDay = new Date(date);
+    nextDay.setDate(nextDay.getDate() + 1);
+    return nextDay;
+  }
+
+  addSession(label, sessionTime, date = null, startTime) {
+    if (!startTime) {
+      // Fallback to original behavior if no startTime provided
+      const labelData = this.getLabelData(label, date);
+      const diff = sessionTime - labelData.totalTime;
+      const sessionData = {
+        startTime: new Date().toISOString(),
+        duration: sessionTime,
+        timestamp: Date.now()
+      };
+      
+      labelData.totalTime += diff;
+      labelData.sessions.push(sessionData);
+      
+      this.saveLabelData(label, labelData, date);
+      
+      return {
+        lapTime: diff,
+        totalTime: labelData.totalTime
+      };
+    }
+
+    const startTimestamp = new Date(startTime).getTime();
+    const endTimestamp = Date.now();
+    const totalDuration = endTimestamp - startTimestamp;
+
+    let currentDate = new Date(startTime);
+    let remainingTime = totalDuration;
+    let processedTime = 0;
     
-    labelData.totalTime += diff;
-    labelData.sessions.push(sessionData);
-    
-    this.saveLabelData(label, labelData, date);
+    const sessions = [];
+
+    while (remainingTime > 0) {
+      const currentDateString = this.formatDateString(currentDate);
+      const endOfCurrentDay = this.getEndOfDay(currentDate);
+      const startOfCurrentDay = this.getStartOfDay(currentDate);
+      
+      // Calculate the start time for this day's session
+      const daySessionStart = Math.max(startTimestamp + processedTime, startOfCurrentDay);
+      
+      // Calculate how much time to allocate to this day
+      let timeForThisDay;
+      if (daySessionStart + remainingTime <= endOfCurrentDay) {
+        // Remaining time fits entirely in this day
+        timeForThisDay = remainingTime;
+      } else {
+        // Time extends beyond this day
+        timeForThisDay = endOfCurrentDay - daySessionStart + 1; // +1 to include the last millisecond of the day
+      }
+
+      if (timeForThisDay > 0) {
+        // Get existing label data for this day
+        const labelData = this.getLabelData(label, currentDateString);
+        
+        // Create session data for this day
+        const sessionData = {
+          startTime: new Date(daySessionStart).toISOString(),
+          duration: timeForThisDay,
+          timestamp: daySessionStart,
+          isMultiDay: totalDuration > timeForThisDay, // Flag to indicate this is part of a multi-day session
+          multiDayInfo: {
+            totalSessionDuration: totalDuration,
+            sessionStartTime: new Date(startTimestamp).toISOString(),
+            sessionEndTime: new Date(endTimestamp).toISOString(),
+            dayPortion: `${new Date(daySessionStart).toISOString()} to ${new Date(Math.min(daySessionStart + timeForThisDay - 1, endOfCurrentDay)).toISOString()}`
+          }
+        };
+        
+        // Add to this day's data
+        labelData.totalTime += timeForThisDay;
+        labelData.sessions.push(sessionData);
+        
+        // Save the updated data for this day
+        this.saveLabelData(label, labelData, currentDateString);
+        
+        sessions.push({
+          date: currentDateString,
+          duration: timeForThisDay,
+          lapTime: timeForThisDay
+        });
+      }
+
+      // Update counters for next iteration
+      remainingTime -= timeForThisDay;
+      processedTime += timeForThisDay;
+      currentDate = this.addOneDay(currentDate);
+    }
+
+    // Calculate total time across all days for return value
+    const totalTimeAcrossAllDays = sessions.reduce((sum, session) => sum + session.duration, 0);
     
     return {
-      lapTime: diff,
-      totalTime: labelData.totalTime
+      lapTime: totalTimeAcrossAllDays,
+      totalTime: totalTimeAcrossAllDays,
+      multiDaySession: sessions.length > 1,
+      dayBreakdown: sessions
     };
   }
 

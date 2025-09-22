@@ -26,8 +26,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.4.1",
-    "figlet": "^1.6.0",
-    "large-stopwatch": "^1.0.0"
+    "figlet": "^1.6.0"
   },
   "engines": {
     "node": ">=14.0.0"
