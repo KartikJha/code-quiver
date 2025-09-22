@@ -11,22 +11,25 @@ def fact(n):
 
 #f = str(fact(n))
 
-f = 1
+#f = 1
 
-for i in range(n, 0, -1):
+#for i in range(n, 0, -1):
     f *= i
 
-f = str(f)
+#f = str(f)
 #print(f, len(f))
 
 z_c = 0
-
-for i in range(len(f) - 1, -1, -1):
-    if int(f[i]) == 0:
-        z_c += 1
-    else:
-        print(z_c)
-        exit(0)
+power_of_5 = 5
+while power_of_5 <= n:
+    z_c += (n//power_of_5)
+    power_of_5 *= 5
+#for i in range(len(f) - 1, -1, -1):
+#   if int(f[i]) == 0:
+#        z_c += 1
+ #   else:
+  #      print(z_c)
+   #     exit(0)
 
 print(z_c)
 
