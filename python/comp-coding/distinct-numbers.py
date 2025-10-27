@@ -1,0 +1,3 @@
+try
+    n = input()
+ex
