@@ -1,65 +1,77 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-# ---- CONFIG ----
-LAN_SUBNET="192.168.0.0/24"   # Your LAN subnet
-GATEWAY="192.168.0.1"         # Your access point IP
-LAN6_SUBNET="fe80::/10"       # Typical IPv6 link-local subnet
-# ----------------
+# This script blocks ALL network traffic (IPv4 & IPv6), inbound and outbound,
+# including established/related connections and LAN. Loopback is kept so the OS stays stable.
+# To undo, see the restore section at the end.
 
-echo "[*] Setting default DROP policies..."
+echo "[*] Flushing existing rules and setting policies to DROP..."
+
+# IPv4: flush and set policy DROP
+iptables -F
+iptables -X
+iptables -Z
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
+
+# IPv6: flush and set policy DROP
+ip6tables -F
+ip6tables -X
+ip6tables -Z
 ip6tables -P INPUT DROP
 ip6tables -P OUTPUT DROP
 ip6tables -P FORWARD DROP
 
-echo "[*] Allow loopback and established connections..."
+echo "[*] Allow minimal loopback for local processes..."
 iptables  -A INPUT  -i lo -j ACCEPT
 iptables  -A OUTPUT -o lo -j ACCEPT
 ip6tables -A INPUT  -i lo -j ACCEPT
 ip6tables -A OUTPUT -o lo -j ACCEPT
 
-iptables  -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-iptables  -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-ip6tables -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-ip6tables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+echo "[*] Explicitly drop established/related to ensure total isolation..."
+iptables  -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j DROP
+iptables  -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j DROP
+ip6tables -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j DROP
+ip6tables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j DROP
 
-echo "[*] Blocking ICMP (IPv4/IPv6)..."
-iptables  -A INPUT  -p icmp -j DROP
-iptables  -A OUTPUT -p icmp -j DROP
+echo "[*] Drop all common L3/L4 protocols (redundant with policy DROP, but explicit)..."
+for proto in tcp udp icmp gre esp ah sctp dccp; do
+  iptables  -A INPUT  -p "$proto" -j DROP || true
+  iptables  -A OUTPUT -p "$proto" -j DROP || true
+done
+# IPv6 ICMP explicitly
 ip6tables -A INPUT  -p ipv6-icmp -j DROP
 ip6tables -A OUTPUT -p ipv6-icmp -j DROP
+# Also drop TCP/UDP explicitly on IPv6
+ip6tables -A INPUT  -p tcp -j DROP
+ip6tables -A OUTPUT -p tcp -j DROP
+ip6tables -A INPUT  -p udp -j DROP
+ip6tables -A OUTPUT -p udp -j DROP
 
-echo "[*] Blocking other network layer protocols..."
-for proto in gre esp ah sctp dccp; do
-    iptables  -A INPUT  -p $proto -j DROP
-    iptables  -A OUTPUT -p $proto -j DROP
-    ip6tables -A INPUT  -p $proto -j DROP
-    ip6tables -A OUTPUT -p $proto -j DROP
-done
+echo "[*] Final rules summary:"
+iptables -S
+ip6tables -S
 
-echo "[*] Blocking all other LAN nodes except gateway..."
-# Block inbound/outbound to the LAN subnet
-iptables -A INPUT  -s $LAN_SUBNET ! -s $GATEWAY -j DROP
-iptables -A OUTPUT -d $LAN_SUBNET ! -d $GATEWAY -j DROP
+cat <<'EOT'
 
-# IPv6 link-local blocking (blocks other hosts on same L2 segment)
-ip6tables -A INPUT  -s $LAN6_SUBNET -j DROP
-ip6tables -A OUTPUT -d $LAN6_SUBNET -j DROP
+[✓] Total network isolation is now active.
+    - ALL inbound/outbound IPv4/IPv6 is blocked
+    - ESTABLISHED/RELATED flows are blocked
+    - LAN access is blocked
+    - Only loopback (lo) is allowed
 
-echo "[*] Allow only gateway and internet-bound connections..."
-# Allow outbound to gateway (adjust ports as needed)
-iptables -A OUTPUT -d $GATEWAY -j ACCEPT
-iptables -A INPUT  -s $GATEWAY -j ACCEPT
+Restore (re-enable networking) with:
+  sudo iptables -F
+  sudo ip6tables -F
+  sudo iptables -P INPUT ACCEPT
+  sudo ip6tables -P INPUT ACCEPT
+  sudo iptables -P OUTPUT ACCEPT
+  sudo ip6tables -P OUTPUT ACCEPT
+  sudo iptables -P FORWARD ACCEPT
+  sudo ip6tables -P FORWARD ACCEPT
 
-echo "[*] Allow DNS (UDP 53), HTTP (80), HTTPS (443) outbound if needed..."
-iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
+Optional ultra-airgap (also brings down interfaces except lo):
+  for IF in $(ls /sys/class/net | grep -v '^lo$'); do sudo ip link set "$IF" down; done
 
-echo "[*] Current IPv4 rules:"
-iptables -L -v -n
-echo "[*] Current IPv6 rules:"
-ip6tables -L -v -n
+EOT
