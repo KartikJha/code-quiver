@@ -23,5 +23,8 @@ ip6tables -P INPUT ACCEPT
 ip6tables -P OUTPUT ACCEPT
 ip6tables -P FORWARD ACCEPT
 
+nft flush ruleset || true
+nmcli radio all on
+
 echo "[*] All iptables/ip6tables rules flushed and defaults set to ACCEPT."
 
