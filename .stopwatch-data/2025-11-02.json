@@ -1,0 +1,51 @@
+{
+  "self": {
+    "totalTime": 300452,
+    "sessions": [
+      {
+        "startTime": "2025-11-01T18:35:06.672Z",
+        "duration": 300452,
+        "timestamp": 1762022106672
+      }
+    ],
+    "lastUpdated": "2025-11-01T18:35:06.672Z"
+  },
+  "sleep": {
+    "totalTime": 30784378,
+    "sessions": [
+      {
+        "startTime": "2025-11-02T03:08:15.007Z",
+        "duration": 30784378,
+        "timestamp": 1762052895007
+      }
+    ],
+    "lastUpdated": "2025-11-02T03:08:15.007Z"
+  },
+  "health:overall": {
+    "totalTime": 10163532,
+    "sessions": [
+      {
+        "startTime": "2025-11-02T05:59:50.240Z",
+        "duration": 10163532,
+        "timestamp": 1762063190240
+      }
+    ],
+    "lastUpdated": "2025-11-02T05:59:50.240Z"
+  },
+  "maintenance": {
+    "totalTime": 44956761,
+    "sessions": [
+      {
+        "startTime": "2025-11-02T12:36:53.006Z",
+        "duration": 23811449,
+        "timestamp": 1762087013006
+      },
+      {
+        "startTime": "2025-11-02T12:46:58.869Z",
+        "duration": 44956761,
+        "timestamp": 1762087618870
+      }
+    ],
+    "lastUpdated": "2025-11-02T12:46:58.870Z"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "sleep": {
+    "totalTime": 47168041,
+    "sessions": [
+      {
+        "startTime": "2025-11-20T07:36:18.789Z",
+        "duration": 47166955,
+        "timestamp": 1763624178789
+      },
+      {
+        "startTime": "2025-11-20T10:57:07.502Z",
+        "duration": 47168041,
+        "timestamp": 1763636227502
+      }
+    ],
+    "lastUpdated": "2025-11-20T10:57:07.502Z"
+  },
+  "growth:job": {
+    "totalTime": 18634290,
+    "sessions": [
+      {
+        "startTime": "2025-11-20T10:55:11.282Z",
+        "duration": 11871837,
+        "timestamp": 1763636111282
+      },
+      {
+        "startTime": "2025-11-20T11:02:09.043Z",
+        "duration": 12166886,
+        "timestamp": 1763636529043
+      },
+      {
+        "startTime": "2025-11-20T12:21:07.891Z",
+        "duration": 12920652,
+        "timestamp": 1763641267891
+      },
+      {
+        "startTime": "2025-11-20T16:04:17.829Z",
+        "duration": 15749610,
+        "timestamp": 1763654657830
+      },
+      {
+        "startTime": "2025-11-20T18:10:35.289Z",
+        "duration": 18632733,
+        "timestamp": 1763662235289
+      },
+      {
+        "startTime": "2025-11-20T18:10:50.032Z",
+        "duration": 18634290,
+        "timestamp": 1763662250033
+      }
+    ],
+    "lastUpdated": "2025-11-20T18:10:50.033Z"
+  },
+  "health:overall": {
+    "totalTime": 323676,
+    "sessions": [
+      {
+        "startTime": "2025-11-20T10:57:03.988Z",
+        "duration": 51748,
+        "timestamp": 1763636223988
+      },
+      {
+        "startTime": "2025-11-20T11:02:43.803Z",
+        "duration": 323676,
+        "timestamp": 1763636563803
+      }
+    ],
+    "lastUpdated": "2025-11-20T11:02:43.803Z"
+  },
+  "family:self": {
+    "totalTime": 19603596,
+    "sessions": [
+      {
+        "startTime": "2025-11-20T12:01:26.795Z",
+        "duration": 3489187,
+        "timestamp": 1763640086795
+      },
+      {
+        "startTime": "2025-11-20T15:17:06.715Z",
+        "duration": 14043650,
+        "timestamp": 1763651826718
+      },
+      {
+        "startTime": "2025-11-20T17:22:30.050Z",
+        "duration": 18728996,
+        "timestamp": 1763659350050
+      },
+      {
+        "startTime": "2025-11-20T18:10:47.438Z",
+        "duration": 18738226,
+        "timestamp": 1763662247438
+      },
+      {
+        "startTime": "2025-11-20T18:25:16.654Z",
+        "duration": 19603596,
+        "timestamp": 1763663116655
+      }
+    ],
+    "lastUpdated": "2025-11-20T18:25:16.655Z"
+  },
+  "self": {
+    "totalTime": 420916,
+    "sessions": [
+      {
+        "startTime": "2025-11-20T12:08:31.307Z",
+        "duration": 420916,
+        "timestamp": 1763640511307
+      }
+    ],
+    "lastUpdated": "2025-11-20T12:08:31.307Z"
+  }
+}

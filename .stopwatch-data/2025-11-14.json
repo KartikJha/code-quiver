@@ -1,0 +1,162 @@
+{
+  "growth:job": {
+    "totalTime": 15396063,
+    "sessions": [
+      {
+        "startTime": "2025-11-13T21:15:28.645Z",
+        "duration": 9918906,
+        "timestamp": 1763068528645
+      },
+      {
+        "startTime": "2025-11-14T05:12:08.101Z",
+        "duration": 12053180,
+        "timestamp": 1763097128101
+      },
+      {
+        "startTime": "2025-11-14T09:07:15.991Z",
+        "duration": 12431686,
+        "timestamp": 1763111235991
+      },
+      {
+        "startTime": "2025-11-14T09:17:14.890Z",
+        "duration": 12873628,
+        "timestamp": 1763111834890
+      },
+      {
+        "startTime": "2025-11-14T09:32:19.305Z",
+        "duration": 13429581,
+        "timestamp": 1763112739305
+      },
+      {
+        "startTime": "2025-11-14T13:22:35.958Z",
+        "duration": 13437473,
+        "timestamp": 1763126555958
+      },
+      {
+        "startTime": "2025-11-14T13:23:29.302Z",
+        "duration": 15218831,
+        "timestamp": 1763126609302
+      },
+      {
+        "startTime": "2025-11-14T14:35:00.933Z",
+        "duration": 15220206,
+        "timestamp": 1763130900933
+      },
+      {
+        "startTime": "2025-11-14T14:37:59.728Z",
+        "duration": 15396063,
+        "timestamp": 1763131079728
+      }
+    ],
+    "lastUpdated": "2025-11-14T14:37:59.728Z"
+  },
+  "self": {
+    "totalTime": 32932913,
+    "sessions": [
+      {
+        "startTime": "2025-11-13T21:25:04.263Z",
+        "duration": 573569,
+        "timestamp": 1763069104263
+      },
+      {
+        "startTime": "2025-11-14T05:45:27.047Z",
+        "duration": 801428,
+        "timestamp": 1763099127047
+      },
+      {
+        "startTime": "2025-11-14T09:22:57.519Z",
+        "duration": 1141726,
+        "timestamp": 1763112177519
+      },
+      {
+        "startTime": "2025-11-14T12:43:03.212Z",
+        "duration": 12566349,
+        "timestamp": 1763124183218
+      },
+      {
+        "startTime": "2025-11-14T13:22:18.783Z",
+        "duration": 14920311,
+        "timestamp": 1763126538783
+      },
+      {
+        "startTime": "2025-11-14T14:34:58.181Z",
+        "duration": 19204258,
+        "timestamp": 1763130898188
+      },
+      {
+        "startTime": "2025-11-14T14:38:05.432Z",
+        "duration": 19207150,
+        "timestamp": 1763131085432
+      },
+      {
+        "startTime": "2025-11-14T15:27:38.761Z",
+        "duration": 21995198,
+        "timestamp": 1763134058768
+      },
+      {
+        "startTime": "2025-11-14T17:12:26.412Z",
+        "duration": 28252913,
+        "timestamp": 1763140346412
+      }
+    ],
+    "lastUpdated": "2025-11-14T17:12:26.412Z"
+  },
+  "sleep": {
+    "totalTime": 25816240,
+    "sessions": [
+      {
+        "startTime": "2025-11-14T04:35:24.758Z",
+        "duration": 25813900,
+        "timestamp": 1763094924758
+      },
+      {
+        "startTime": "2025-11-14T05:18:11.694Z",
+        "duration": 25816240,
+        "timestamp": 1763097491694
+      }
+    ],
+    "lastUpdated": "2025-11-14T05:18:11.694Z"
+  },
+  "health:overall": {
+    "totalTime": 1756758,
+    "sessions": [
+      {
+        "startTime": "2025-11-14T05:18:07.038Z",
+        "duration": 353824,
+        "timestamp": 1763097487038
+      },
+      {
+        "startTime": "2025-11-14T05:41:36.472Z",
+        "duration": 1756758,
+        "timestamp": 1763098896472
+      }
+    ],
+    "lastUpdated": "2025-11-14T05:41:36.472Z"
+  },
+  "family:self": {
+    "totalTime": 16735033,
+    "sessions": [
+      {
+        "startTime": "2025-11-14T09:00:53.220Z",
+        "duration": 11722958,
+        "timestamp": 1763110853220
+      },
+      {
+        "startTime": "2025-11-14T09:09:51.103Z",
+        "duration": 11876321,
+        "timestamp": 1763111391103
+      },
+      {
+        "startTime": "2025-11-14T14:41:06.918Z",
+        "duration": 12055033,
+        "timestamp": 1763131266918
+      },
+       {
+        "startTime": "2025-11-14T18:30:26.412Z",
+        "duration": 16735033,
+        "timestamp": 1763140346412
+      }
+    ],
+    "lastUpdated": "2025-11-14T18:30:26.412Z"
+  }
+}

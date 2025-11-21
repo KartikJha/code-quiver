@@ -1,0 +1,164 @@
+{
+  "self": {
+    "totalTime": 4321098,
+    "sessions": [
+      {
+        "startTime": "2025-09-28T18:30:39.989Z",
+        "duration": 4208,
+        "timestamp": 1759084239989
+      },
+      {
+        "startTime": "2025-09-28T20:05:34.395Z",
+        "duration": 614564,
+        "timestamp": 1759089934396
+      },
+      {
+        "startTime": "2025-09-29T12:18:47.205Z",
+        "duration": 615933,
+        "timestamp": 1759148327206
+      },
+      {
+        "startTime": "2025-09-29T12:49:24.361Z",
+        "duration": 621402,
+        "timestamp": 1759150164361
+      },
+      {
+        "startTime": "2025-09-29T14:19:53.717Z",
+        "duration": 1346010,
+        "timestamp": 1759155593718
+      },
+      {
+        "startTime": "2025-09-29T15:12:34.563Z",
+        "duration": 1357767,
+        "timestamp": 1759158754564
+      },
+      {
+        "startTime": "2025-09-29T15:56:37.843Z",
+        "duration": 1662701,
+        "timestamp": 1759161397843
+      },
+      {
+        "startTime": "2025-09-29T18:29:22.853Z",
+        "duration": 4321098,
+        "timestamp": 1759170562853
+      }
+    ],
+    "lastUpdated": "2025-09-29T18:29:22.853Z"
+  },
+  "family:self": {
+    "totalTime": 8963275,
+    "sessions": [
+      {
+        "startTime": "2025-09-28T19:53:10.475Z",
+        "duration": 4945999,
+        "timestamp": 1759089190475
+      },
+      {
+        "startTime": "2025-09-29T12:34:26.706Z",
+        "duration": 5876962,
+        "timestamp": 1759149266706
+      },
+      {
+        "startTime": "2025-09-29T15:25:57.246Z",
+        "duration": 6674473,
+        "timestamp": 1759159557246
+      },
+      {
+        "startTime": "2025-09-29T15:51:31.066Z",
+        "duration": 6675254,
+        "timestamp": 1759161091067
+      },
+      {
+        "startTime": "2025-09-29T17:45:02.573Z",
+        "duration": 8963275,
+        "timestamp": 1759167902578
+      }
+    ],
+    "lastUpdated": "2025-09-29T17:45:02.578Z"
+  },
+  "sleep": {
+    "totalTime": 30301893,
+    "sessions": [
+      {
+        "startTime": "2025-09-28T19:55:19.191Z",
+        "duration": 122032,
+        "timestamp": 1759089319191
+      },
+      {
+        "startTime": "2025-09-29T04:28:35.622Z",
+        "duration": 30301893,
+        "timestamp": 1759120115622
+      }
+    ],
+    "lastUpdated": "2025-09-29T04:28:35.622Z"
+  },
+  "health:overall": {
+    "totalTime": 9327878,
+    "sessions": [
+      {
+        "startTime": "2025-09-29T05:13:44.579Z",
+        "duration": 3280232,
+        "timestamp": 1759122824579
+      },
+      {
+        "startTime": "2025-09-29T12:49:38.877Z",
+        "duration": 3281244,
+        "timestamp": 1759150178877
+      },
+      {
+        "startTime": "2025-09-29T14:05:58.935Z",
+        "duration": 7852864,
+        "timestamp": 1759154758942
+      },
+      {
+        "startTime": "2025-09-29T15:50:34.264Z",
+        "duration": 9327878,
+        "timestamp": 1759161034265
+      }
+    ],
+    "lastUpdated": "2025-09-29T15:50:34.265Z"
+  },
+  "growth:job": {
+    "totalTime": 29515854,
+    "sessions": [
+      {
+        "startTime": "2025-09-29T12:15:58.911Z",
+        "duration": 25315044,
+        "timestamp": 1759148158911
+      },
+      {
+        "startTime": "2025-09-29T17:06:47.061Z",
+        "duration": 29515854,
+        "timestamp": 1759165607064
+      }
+    ],
+    "lastUpdated": "2025-09-29T17:06:47.064Z"
+  },
+  "growth:trading": {
+    "totalTime": 880241,
+    "sessions": [
+      {
+        "startTime": "2025-09-29T12:49:16.654Z",
+        "duration": 880241,
+        "timestamp": 1759150156654
+      }
+    ],
+    "lastUpdated": "2025-09-29T12:49:16.654Z"
+  },
+  "growth:consulting": {
+    "totalTime": 3189477,
+    "sessions": [
+      {
+        "startTime": "2025-09-29T15:12:21.766Z",
+        "duration": 3140227,
+        "timestamp": 1759158741766
+      },
+      {
+        "startTime": "2025-09-29T15:51:27.145Z",
+        "duration": 3189477,
+        "timestamp": 1759161087145
+      }
+    ],
+    "lastUpdated": "2025-09-29T15:51:27.145Z"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "self": {
+    "totalTime": 5394226,
+    "sessions": [
+      {
+        "startTime": "2025-11-07T20:40:24.285Z",
+        "duration": 7803609,
+        "timestamp": 1762548024285
+      },
+      {
+        "startTime": "2025-11-07T20:40:32.078Z",
+        "duration": 7807756,
+        "timestamp": 1762548032078
+      },
+      {
+        "startTime": "2025-11-07T21:41:35.359Z",
+        "duration": 3696945,
+        "timestamp": 1762551695360
+      },
+      {
+        "startTime": "2025-11-08T11:10:26.806Z",
+        "duration": 5394226,
+        "timestamp": 1762600226806
+      }
+    ],
+    "lastUpdated": "2025-11-08T11:10:26.806Z"
+  },
+  "family:self": {
+    "totalTime": 29654647,
+    "sessions": [
+      {
+        "startTime": "2025-11-07T20:40:46.404Z",
+        "duration": 7803627,
+        "timestamp": 1762548046404
+      },
+      {
+        "startTime": "2025-11-08T13:49:32.471Z",
+        "duration": 29654647,
+        "timestamp": 1762609772471
+      }
+    ],
+    "lastUpdated": "2025-11-08T13:49:32.472Z"
+  },
+  "sleep": {
+    "totalTime": 33994332,
+    "sessions": [
+      {
+        "startTime": "2025-11-08T07:08:12.953Z",
+        "duration": 33993278,
+        "timestamp": 1762585692953
+      },
+      {
+        "startTime": "2025-11-08T10:03:14.361Z",
+        "duration": 33994332,
+        "timestamp": 1762596194361
+      }
+    ],
+    "lastUpdated": "2025-11-08T10:03:14.361Z"
+  },
+  "growth:job": {
+    "totalTime": 13266328,
+    "sessions": [
+      {
+        "startTime": "2025-11-08T10:02:39.095Z",
+        "duration": 10462243,
+        "timestamp": 1762596159095
+      },
+      {
+        "startTime": "2025-11-08T11:57:12.715Z",
+        "duration": 13266328,
+        "timestamp": 1762603032715
+      }
+    ],
+    "lastUpdated": "2025-11-08T11:57:12.715Z"
+  },
+  "health:overall": {
+    "totalTime": 2235501,
+    "sessions": [
+      {
+        "startTime": "2025-11-08T10:40:46.113Z",
+        "duration": 2235501,
+        "timestamp": 1762598446113
+      }
+    ],
+    "lastUpdated": "2025-11-08T10:40:46.113Z"
+  }
+}

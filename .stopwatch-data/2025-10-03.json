@@ -1,0 +1,91 @@
+{
+  "self": {
+    "totalTime": 8869627,
+    "sessions": [
+      {
+        "startTime": "2025-10-02T18:31:27.028Z",
+        "duration": 71997,
+        "timestamp": 1759429887028
+      },
+      {
+        "startTime": "2025-10-03T01:28:28.884Z",
+        "duration": 4180890,
+        "timestamp": 1759454908892
+      },
+      {
+        "startTime": "2025-10-03T17:36:53.509Z",
+        "duration": 6318317,
+        "timestamp": 1759513013512
+      },
+      {
+        "startTime": "2025-10-03T18:28:01.258Z",
+        "duration": 8869627,
+        "timestamp": 1759516081258
+      }
+    ],
+    "lastUpdated": "2025-10-03T18:28:01.258Z"
+  },
+  "sleep": {
+    "totalTime": 37265318,
+    "sessions": [
+      {
+        "startTime": "2025-10-03T00:19:58.804Z",
+        "duration": 20907402,
+        "timestamp": 1759450798804
+      },
+      {
+        "startTime": "2025-10-03T06:01:03.640Z",
+        "duration": 37260360,
+        "timestamp": 1759471263640
+      },
+      {
+        "startTime": "2025-10-03T07:00:13.538Z",
+        "duration": 37265318,
+        "timestamp": 1759474813538
+      }
+    ],
+    "lastUpdated": "2025-10-03T07:00:13.538Z"
+  },
+  "health:overall": {
+    "totalTime": 9789200,
+    "sessions": [
+      {
+        "startTime": "2025-10-03T06:59:17.589Z",
+        "duration": 3490812,
+        "timestamp": 1759474757589
+      },
+      {
+        "startTime": "2025-10-03T12:46:08.100Z",
+        "duration": 9789200,
+        "timestamp": 1759495568101
+      }
+    ],
+    "lastUpdated": "2025-10-03T12:46:08.101Z"
+  },
+  "family:self": {
+    "totalTime": 30255183,
+    "sessions": [
+      {
+        "startTime": "2025-10-03T07:00:20.117Z",
+        "duration": 2218,
+        "timestamp": 1759474820117
+      },
+      {
+        "startTime": "2025-10-03T11:01:07.108Z",
+        "duration": 14440943,
+        "timestamp": 1759489267110
+      },
+      {
+        "startTime": "2025-10-03T17:01:11.689Z",
+        "duration": 29741762,
+        "timestamp": 1759510871689
+      },
+      {
+        "startTime": "2025-10-03T17:45:28.755Z",
+        "duration": 30255183,
+        "timestamp": 1759513528755
+      }
+    ],
+    "lastUpdated": "2025-10-03T17:45:28.756Z"
+  }
+}

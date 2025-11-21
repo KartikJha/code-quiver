@@ -1,0 +1,134 @@
+{
+  "self": {
+    "totalTime": 9605885,
+    "sessions": [
+      {
+        "startTime": "2025-11-11T18:35:27.499Z",
+        "duration": 281529,
+        "timestamp": 1762886127499
+      },
+      {
+        "startTime": "2025-11-12T13:00:14.184Z",
+        "duration": 3505556,
+        "timestamp": 1762952414184
+      },
+      {
+        "startTime": "2025-11-12T15:19:31.424Z",
+        "duration": 8710819,
+        "timestamp": 1762960771424
+      },
+      {
+        "startTime": "2025-11-12T16:33:01.581Z",
+        "duration": 9605885,
+        "timestamp": 1762965181581
+      }
+    ],
+    "lastUpdated": "2025-11-12T16:33:01.581Z"
+  },
+  "sleep": {
+    "totalTime": 33374945,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T03:51:49.440Z",
+        "duration": 33374945,
+        "timestamp": 1762919509440
+      }
+    ],
+    "lastUpdated": "2025-11-12T03:51:49.440Z"
+  },
+  "health:overall": {
+    "totalTime": 205302,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T03:55:18.439Z",
+        "duration": 205302,
+        "timestamp": 1762919718439
+      }
+    ],
+    "lastUpdated": "2025-11-12T03:55:18.439Z"
+  },
+  "growth:job": {
+    "totalTime": 13676625,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T05:15:28.600Z",
+        "duration": 4801579,
+        "timestamp": 1762924528600
+      },
+      {
+        "startTime": "2025-11-12T05:56:14.682Z",
+        "duration": 5724042,
+        "timestamp": 1762926974682
+      },
+      {
+        "startTime": "2025-11-12T06:03:07.346Z",
+        "duration": 5980041,
+        "timestamp": 1762927387346
+      },
+      {
+        "startTime": "2025-11-12T12:06:15.239Z",
+        "duration": 12886656,
+        "timestamp": 1762949175240
+      },
+      {
+        "startTime": "2025-11-12T13:52:36.719Z",
+        "duration": 13676625,
+        "timestamp": 1762955556719
+      }
+    ],
+    "lastUpdated": "2025-11-12T13:52:36.720Z"
+  },
+  "family:self": {
+    "totalTime": 23530381,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T05:40:50.945Z",
+        "duration": 1519497,
+        "timestamp": 1762926050945
+      },
+      {
+        "startTime": "2025-11-12T05:58:49.259Z",
+        "duration": 1673243,
+        "timestamp": 1762927129259
+      },
+      {
+        "startTime": "2025-11-12T10:11:07.380Z",
+        "duration": 16551226,
+        "timestamp": 1762942267380
+      },
+      {
+        "startTime": "2025-11-12T13:39:06.974Z",
+        "duration": 18881823,
+        "timestamp": 1762954746974
+      },
+      {
+        "startTime": "2025-11-12T17:50:32.475Z",
+        "duration": 23530381,
+        "timestamp": 1762969832478
+      }
+    ],
+    "lastUpdated": "2025-11-12T17:50:32.478Z"
+  },
+  "growth:consulting": {
+    "totalTime": 3508673,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T16:18:05.070Z",
+        "duration": 3508673,
+        "timestamp": 1762964285070
+      }
+    ],
+    "lastUpdated": "2025-11-12T16:18:05.070Z"
+  },
+  "maintenance": {
+    "totalTime": 2324639,
+    "sessions": [
+      {
+        "startTime": "2025-11-12T18:29:20.127Z",
+        "duration": 2324639,
+        "timestamp": 1762972160127
+      }
+    ],
+    "lastUpdated": "2025-11-12T18:29:20.127Z"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "self": {
+    "totalTime": 2611655,
+    "sessions": [
+      {
+        "startTime": "2025-10-05T18:37:30.900Z",
+        "duration": 394075,
+        "timestamp": 1759689450900
+      },
+      {
+        "startTime": "2025-10-06T15:46:23.994Z",
+        "duration": 1562879,
+        "timestamp": 1759765583994
+      },
+      {
+        "startTime": "2025-10-06T16:32:30.383Z",
+        "duration": 2611655,
+        "timestamp": 1759768350386
+      }
+    ],
+    "lastUpdated": "2025-10-06T16:32:30.386Z"
+  },
+  "family:self": {
+    "totalTime": 28094481,
+    "sessions": [
+      {
+        "startTime": "2025-10-05T20:40:32.273Z",
+        "duration": 7380108,
+        "timestamp": 1759696832273
+      },
+      {
+        "startTime": "2025-10-06T14:30:57.585Z",
+        "duration": 27594951,
+        "timestamp": 1759761057592
+      },
+      {
+        "startTime": "2025-10-06T17:02:29.776Z",
+        "duration": 28094481,
+        "timestamp": 1759770149776
+      }
+    ],
+    "lastUpdated": "2025-10-06T17:02:29.776Z"
+  },
+  "sleep": {
+    "totalTime": 43997456,
+    "sessions": [
+      {
+        "startTime": "2025-10-06T08:53:58.541Z",
+        "duration": 43997456,
+        "timestamp": 1759740838541
+      }
+    ],
+    "lastUpdated": "2025-10-06T08:53:58.541Z"
+  },
+  "health:overall": {
+    "totalTime": 4809367,
+    "sessions": [
+      {
+        "startTime": "2025-10-06T15:26:49.829Z",
+        "duration": 3322826,
+        "timestamp": 1759764409829
+      },
+      {
+        "startTime": "2025-10-06T16:11:15.481Z",
+        "duration": 4809367,
+        "timestamp": 1759767075481
+      }
+    ],
+    "lastUpdated": "2025-10-06T16:11:15.481Z"
+  },
+  "growth:job": {
+    "totalTime": 7200000,
+    "sessions": [
+      {
+        "startTime": "2025-10-06T16:14:56.831Z",
+        "duration": 213254,
+        "timestamp": 1759767296831
+      },
+      {
+        "startTime": "2025-10-06T16:54:06.501Z",
+        "duration": 7200000,
+        "timestamp": 1759769646501
+      }
+    ],
+    "lastUpdated": "2025-10-06T16:54:06.501Z"
+  }
+}

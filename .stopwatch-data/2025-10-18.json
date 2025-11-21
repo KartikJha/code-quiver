@@ -1,0 +1,97 @@
+{
+  "family:self": {
+    "totalTime": 32435399,
+    "sessions": [
+      {
+        "startTime": "2025-10-17T19:20:40.473Z",
+        "duration": 3002241,
+        "timestamp": 1760728840473
+      },
+      {
+        "startTime": "2025-10-18T11:14:07.655Z",
+        "duration": 11672025,
+        "timestamp": 1760786047655
+      },
+      {
+        "startTime": "2025-10-18T18:28:19.327Z",
+        "duration": 32435399,
+        "timestamp": 1760812099327
+      }
+    ],
+    "lastUpdated": "2025-10-18T18:28:19.327Z"
+  },
+  "sleep": {
+    "totalTime": 35714023,
+    "sessions": [
+      {
+        "startTime": "2025-10-18T05:15:59.153Z",
+        "duration": 35714023,
+        "timestamp": 1760764559153
+      }
+    ],
+    "lastUpdated": "2025-10-18T05:15:59.153Z"
+  },
+  "health:overall": {
+    "totalTime": 6614080,
+    "sessions": [
+      {
+        "startTime": "2025-10-18T05:23:19.551Z",
+        "duration": 1384089.3999023438,
+        "timestamp": 1760764999551
+      },
+      {
+        "startTime": "2025-10-18T06:29:17.915Z",
+        "duration": 5334380,
+        "timestamp": 1760768957918
+      },
+      {
+        "startTime": "2025-10-18T06:29:28.521Z",
+        "duration": 2884391,
+        "timestamp": 1760768968521
+      },
+      {
+        "startTime": "2025-10-18T06:30:19.045Z",
+        "duration": 2886679,
+        "timestamp": 1760769019045
+      },
+      {
+        "startTime": "2025-10-18T07:32:46.493Z",
+        "duration": 6614080,
+        "timestamp": 1760772766493
+      }
+    ],
+    "lastUpdated": "2025-10-18T07:32:46.494Z"
+  },
+  "growth:streaming": {
+    "totalTime": 2408591,
+    "sessions": [
+      {
+        "startTime": "2025-10-18T06:30:11.600Z",
+        "duration": 2890052,
+        "timestamp": 1760769011600
+      },
+      {
+        "startTime": "2025-10-18T06:30:32.264Z",
+        "duration": 2408591,
+        "timestamp": 1760769032264
+      }
+    ],
+    "lastUpdated": "2025-10-18T06:30:32.265Z"
+  },
+  "self": {
+    "totalTime": 9847197,
+    "sessions": [
+      {
+        "startTime": "2025-10-18T08:49:26.518Z",
+        "duration": 4561762,
+        "timestamp": 1760777366518
+      },
+      {
+        "startTime": "2025-10-18T12:42:14.162Z",
+        "duration": 9847197,
+        "timestamp": 1760791334169
+      }
+    ],
+    "lastUpdated": "2025-10-18T12:42:14.170Z"
+  }
+}

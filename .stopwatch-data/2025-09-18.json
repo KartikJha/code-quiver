@@ -1,0 +1,19 @@
+{
+  "growth:job": {
+    "totalTime": 17035929,
+    "sessions": [
+      {
+        "startTime": "2025-09-18T20:58:45.106Z",
+        "duration": 17029043,
+        "timestamp": 1758229125106
+      },
+      {
+        "startTime": "2025-09-18T20:59:09.425Z",
+        "duration": 17035929,
+        "timestamp": 1758229149425
+      }
+    ],
+    "lastUpdated": "2025-09-18T20:59:09.425Z"
+  }
+}
+
