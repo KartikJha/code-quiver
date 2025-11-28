@@ -1,0 +1,58 @@
+{
+  "sleep": {
+    "totalTime": 45480000,
+    "sessions": [
+      {
+        "startTime": "2025-11-23T04:00:00.000Z",
+        "duration": 45480000,
+        "timestamp": 1763860800000
+      }
+    ],
+    "lastUpdated": "2025-11-23T04:00:00.000Z"
+  },
+  "growth:job": {
+    "totalTime": 18634290,
+    "sessions": [
+      {
+        "startTime": "2025-11-23T06:00:00.000Z",
+        "duration": 18634290,
+        "timestamp": 1763868000000
+      }
+    ],
+    "lastUpdated": "2025-11-23T06:00:00.000Z"
+  },
+  "self": {
+    "totalTime": 420916,
+    "sessions": [
+      {
+        "startTime": "2025-11-23T12:00:00.000Z",
+        "duration": 420916,
+        "timestamp": 1763893200000
+      }
+    ],
+    "lastUpdated": "2025-11-23T12:00:00.000Z"
+  },
+  "family:self": {
+    "totalTime": 19603596,
+    "sessions": [
+      {
+        "startTime": "2025-11-23T13:00:00.000Z",
+        "duration": 19603596,
+        "timestamp": 1763896800000
+      }
+    ],
+    "lastUpdated": "2025-11-23T13:00:00.000Z"
+  },
+  "health:overall": {
+    "totalTime": 323676,
+    "sessions": [
+      {
+        "startTime": "2025-11-23T18:00:00.000Z",
+        "duration": 323676,
+        "timestamp": 1763914800000
+      }
+    ],
+    "lastUpdated": "2025-11-23T18:00:00.000Z"
+  }
+}
+
