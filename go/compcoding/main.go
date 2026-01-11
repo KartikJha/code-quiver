@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
-	"github.com/KartikJha/code-quiver/go/compcoding"
+	"github.com/KartikJha/code-quiver/go/compcoding/programs"
 )
 
 
