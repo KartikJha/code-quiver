@@ -1,3 +1,3 @@
-module code_quiver/go/compcoding
+module github.com/KartikJha/code-quiver/go/compcoding
 
 go 1.18
