@@ -1,8 +1,9 @@
 package compcoding
 
 import (
-	"github.com/KartikJha/code-quiver/go/compcoding/programs"
 	"testing"
+
+	compcoding "github.com/KartikJha/code-quiver/go/compcoding/programs"
 )
 
 func TestRemoveStar(t *testing.T) {
@@ -60,5 +61,6 @@ func TestRemoveStar(t *testing.T) {
 				t.Errorf("removeStar(%s) = %s; want %s", tt.input, result, tt.expected)
 			}
 		})
+
 	}
 }

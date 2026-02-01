@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"math"
-	"github.com/KartikJha/code-quiver/go/compcoding/programs"
-)
 
+	compcoding "github.com/KartikJha/code-quiver/go/compcoding/programs"
+)
 
 func main() {
 	fmt.Printf("MaxInt64: %s\n %g\n", math.MaxInt64, 3.143)
 	fmt.Println(compcoding.RemoveStars("leet*code"))
+	fmt.Println(compcoding.SomeTestsWithSlicesAndStrings())
 }
