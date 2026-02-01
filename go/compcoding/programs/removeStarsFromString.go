@@ -1,4 +1,4 @@
-package compcoding
+package programs
 
 import (
 	"strings"
