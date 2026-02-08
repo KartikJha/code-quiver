@@ -10,9 +10,11 @@ function perm(arr) {
 		const [e, carr] = removeICRest(i, arr)
 		result_set.push(...perm(carr).map((e1, i1) => [e].concat(e1)))
 	}
-
+	console.log(result_set);
 	return result_set;
 }
+
+// function add2nums {}
 
 
 function removeICRest(i, arr) {
