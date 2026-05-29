@@ -48,6 +48,7 @@ function perm(arr) {
 
 
 function removeICRest(i, arr) {
+    
 	return [arr[i], [...arr.slice(0, i), ...arr.slice(i + 1)]]
 }
 
